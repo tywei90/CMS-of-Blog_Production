@@ -1,0 +1,35 @@
+@import "../mixins";
+section.account {
+    @include rightSide();
+    .title {
+        @include title();
+        font-size: 24px;
+        padding-right: 140px;
+    }
+    .password {
+        width: 260px;
+        margin: 60px auto 40px auto;
+        padding-right: 100px;
+        input {
+            margin: 30px auto;
+            @include defaultInput(200px, 40px);
+            border-bottom: 1px solid $baseColor1;
+        }
+    }
+    .panel {
+        @include panel();
+    }
+    .panel1{
+        text-align: center;
+        button{
+            width: 220px;
+            height: 40px;
+        }
+    }
+    .panel2{
+        position: absolute;
+        bottom: 20px;
+        right: 0;
+        padding-right: 50px;
+    }
+}

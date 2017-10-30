@@ -1,0 +1,12 @@
+doctype html
+html(lang="zh-CN")
+  head
+    title #{title}
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="icon" href="src/img/favicon.ico")
+  body
+    waiting(v-if='waiting')
+    pop(v-show='pop')
+    component(:is='bg')
+    router-view
+    script(src='https://www.wty90.com/public/main.build.js')

@@ -1,0 +1,184 @@
+@import "lib/normalize";
+@import "lib/markdown";
+@import "lib/highlight";
+@import "lib/iconfont";
+@import 'mediaQuery';
+@import "variables";
+@import "btn";
+html,
+body {
+    height: 100%;
+    font-family: $fontGothic;
+}
+
+button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+a {
+    text-decoration: none;
+}
+
+em,
+i {
+    font-style: normal;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.f-cb {
+    display: block;
+    zoom: 1
+}
+
+.f-cb:after {
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+.f-fl {
+    float: left
+}
+
+.f-fr {
+    float: right
+}
+
+.f-hide {
+    display: none
+}
+
+.f-hide2 {
+    visibility: hidden
+}
+
+.f-hide3 {
+    position: absolute;
+    left: -99999px;
+    top: -99999px
+}
+
+// 登录弹窗模块css
+.m-dialog.login-dialog {
+    .dialog-wrap {
+        margin-top: -200px;
+        margin-left: -195px;
+        border-radius: 5px;
+        .content {
+            min-height: 80px;
+            width: 300px;
+            border-radius: 6px;
+            padding-bottom: 0px;
+        }
+        >.button{
+            display: none;
+        }
+    }
+    .login-form {
+        .fire-logo {
+            color: #e53333;
+            line-height: 40px;
+            margin-bottom: 30px;
+            i{
+                font-size: 40px;
+            }
+        }
+        .username,
+        .password {
+            position: relative;
+            i:first-child {
+                position: absolute;
+                left: 10px;
+                top: 8px;
+                font-size: 22px;
+                color: #c8c8c8;
+                margin-right: 10px;
+            }
+            input {
+                background: transparent;
+                position: relative;
+                margin-bottom: 0px;
+                border: 1px solid #c5cddb;
+                box-sizing: border-box;
+                height: 42px;
+                line-height: 42px;
+                padding: 4px 42px;
+                width: 100%;
+                color: #333;
+                font-size: 16px;
+                outline: none;
+                &:focus {
+                    border: 1px solid #4aafe9;
+                }
+            }
+            .blankInput {
+                border: 1px solid #fa6060;
+            }
+            i:last-child {
+                position: absolute;
+                right: 10px;
+                top: 9px;
+                font-size: 18px;
+                color: #c8c8c8;
+                margin-left: 10px;
+                cursor: pointer;
+            }
+        }
+        .username {
+            margin-bottom: 20px;
+        }
+        .errorTip {
+            text-align: justify;
+            color: #ff2b2b;
+            font-size: 12px;
+            height: 30px;
+            line-height: 30px;
+            i {
+                margin-right: 3px;
+                font-size: 13px;
+            }
+        }
+        .loginBtn {
+            margin: 0 auto;
+            padding: 0 0 50px 0;
+            font-size: 18px;
+            width: 300px;
+            box-sizing: border-box;
+            .btn {
+                height: 44px;
+                line-height: 44px;
+                width: 300px;
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+        }
+        .others {
+            position: absolute;
+            bottom: 25px;
+            left: 0;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0 45px;
+            span,
+            em {
+                height: 12px;
+                text-decoration: none;
+                cursor: pointer;
+                color: #999;
+                font-size: 12px;
+                line-height: 16px;
+            }
+        }
+    }
+}

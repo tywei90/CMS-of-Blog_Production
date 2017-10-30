@@ -1,0 +1,158 @@
+@import "../mixins";
+.icon-fire {
+    font-size: 40px;
+    cursor: pointer;
+}
+.regist-suc{
+    .icon-dui {
+        font-size: 30px;
+        color: #26d426;
+        padding-right: 10px;
+    }
+}
+section.register {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    min-height: 500px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    .icon-weixian,
+    .icon-cuowu{
+        font-size: 13px;
+    }
+    .icon-dui{
+        font-size: 15px;
+        color: #26d426;
+        margin-right: 3px;
+    }
+    .form {
+        // margin-top: -150px;
+        padding: 10px 30px;
+        width: 550px;
+        // height: 500px;
+        // margin: 100px auto;
+        // position: absolute;
+        // top: 0;
+        // left: 50%;
+        // transform: translate(-50%, 0);
+        .part {
+            height: 80px;
+            text-align: center;
+            color: $baseColor1;
+            font-family: $fontYaHei;
+            padding-right: 130px;
+            position: relative;
+            .password-level{
+                position: absolute;
+                right: 30px;
+                top: 10px;
+                width: 80px;
+                height: 30px;
+                span{
+                    width: 15px;
+                    height: 15px;
+                    border: 1px solid white;
+                    background: transparent;
+                }
+            }
+            .password-level1{
+                span:nth-child(1){
+                    background: green;
+                }
+            }
+            .password-level2{
+                span:nth-child(1){
+                    background: green;
+                }
+                span:nth-child(2){
+                    background: #2fae2f;
+                }
+            }
+            .password-level3{
+                span:nth-child(1){
+                    background: green;
+                }
+                span:nth-child(2){
+                    background: #2fae2f;
+                }
+                span:nth-child(3){
+                    background: #16de16;
+                }
+            }
+            >span{
+                padding-top: 10px;
+                padding-right: 10px;
+            }
+            input {
+                @include defaultInput(250px, 34px);
+                color: $baseColor1;
+                border-bottom: 1px solid $baseColor1;
+                background-color: transparent;
+            }
+            button {
+                @include defaultButton(transparent, $baseColor1);
+                border: 1px solid $baseColor1;
+                width: 280px;
+                height: 45px;
+                &:hover {
+                    color: $baseColor4;
+                }
+            }
+            label {
+                display: block;
+                margin-top: 10px;
+                font-size: 12px;
+                text-align: left;
+                color: #e53333;
+                width: 270px;
+                .level-tip{
+                    color: #fff;
+                }
+                .username-suc{
+                    color: #26d426;
+                }
+            }
+            &:first-child{
+                padding-right: 30px;
+                height: 120px;
+            }
+            &:last-of-type {
+                margin-top: 40px;
+                padding-right: 65px;
+                span {
+                    display: block;
+                    color: white;
+                    text-align: center;
+                    font-size: 14px;
+                    margin-top: 20px;
+                    a {
+                        color: #2cdc0d
+                    }
+                }
+            }
+        }
+        .send-email{
+            padding-left: 78px;
+            padding-right: 0px;
+            .sendEmailBtn{
+                cursor: pointer;
+                margin-left: 10px;
+                padding: 5px 10px;
+                border: 1px solid white;
+                border-radius: 3px;
+            }
+            .disabled{
+                background: #999;
+                cursor: default;
+            }
+            input{
+                width: 200px;
+            }
+        }
+    }
+}
+
