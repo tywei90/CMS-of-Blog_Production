@@ -2,39 +2,45 @@
     <section class="account">
         <validator name="loginValidator">
             <div class="title">修改密码</div>
-            <div class="password">
-                <i class="icon iconfont icon-mima"></i>
-                <input type="password" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
-                <input type="password"
-                       placeholder="输入原密码"
-                       initial="off"
-                       detect-change="off"
-                       detect-blur="off"
-                       autocomplete="off"
-                       v-validate:password1="passwordRule"
-                       v-model="opw">
-                <br>
-                <i class="icon iconfont icon-mima"></i>
-                <input type="password"
-                       placeholder="输入新密码"
-                       initial="off"
-                       detect-change="off"
-                       detect-blur="off"
-                       autocomplete="off"
-                       v-validate:password2="passwordRule"
-                       v-model="pw">
-                <br>
-                <i class="icon iconfont icon-mima"></i>
-                <input type="password"
-                       placeholder="确认新密码"
-                       initial="off"
-                       detect-change="off"
-                       detect-blur="off"
-                       autocomplete="off"
-                       v-validate:password3="passwordRule"
-                       @keydown.enter="savePw"
-                       v-model="rpw">
-            </div>
+            <ul class="password">
+                <li>
+                    <i class="icon iconfont icon-mima"></i>
+                    <input type="password" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
+                    <input type="password"
+                           placeholder="输入原密码"
+                           initial="off"
+                           detect-change="off"
+                           detect-blur="off"
+                           autocomplete="off"
+                           v-validate:password1="passwordRule"
+                           v-model="opw">
+                </li>
+                <li>
+                    <i class="icon iconfont icon-mima"></i>
+                    <input type="password" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
+                    <input type="password"
+                           placeholder="输入新密码"
+                           initial="off"
+                           detect-change="off"
+                           detect-blur="off"
+                           autocomplete="off"
+                           v-validate:password2="passwordRule"
+                           v-model="pw">
+                </li>
+                <li>
+                    <i class="icon iconfont icon-mima"></i>
+                    <input type="password" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
+                    <input type="password"
+                           placeholder="确认新密码"
+                           initial="off"
+                           detect-change="off"
+                           detect-blur="off"
+                           autocomplete="off"
+                           v-validate:password3="passwordRule"
+                           @keydown.enter="savePw"
+                           v-model="rpw">
+                </li>
+            </ul>
             <div class="panel panel1">
                 <button @click="savePw">保存</button>
             </div>

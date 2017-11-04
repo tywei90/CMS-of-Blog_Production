@@ -107,8 +107,7 @@
                     </div>
                     <div class="f-fr">
                         <input type="password" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
-                        <input id="password1"
-                            type="password"
+                        <input type="password"
                             placeholder="密码长度4-16个字符"
                             autocomplete="off"
                             v-model="password1"
@@ -124,8 +123,7 @@
                 <div class="part f-cb">
                     <div class="f-fr">
                         <input type="password" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
-                        <input id="password2"
-                            type="password"
+                        <input type="password"
                             placeholder="密码长度4-16个字符"
                             autocomplete="off"
                             v-model="password2"
