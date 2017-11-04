@@ -18,7 +18,7 @@ import MyCanvas         from './components/MyCanvas.vue'
 
 import store            from './vuex/store'
 import {pop as popx}    from './vuex/actions'
-import $                from '../js/jquery.min'
+import $                from './js/jquery.min'
 
 
 Vue.use(VueResource)
