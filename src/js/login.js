@@ -16,7 +16,7 @@ function popLogin(cb) {
             '<li class="username">',
             '<i class="icon iconfont icon-zhanghu"></i>',
             '<input type="text" name="userName" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">',
-            '<input class="userName-input" type="text" name="userName" placeholder="用户名" autocomplete="off">',
+            '<input class="username-input" type="text" name="userName" placeholder="用户名" autocomplete="off">',
             '<i class="icon iconfont icon-cuowu f-hide2"></i>',
             '</li>',
             '<li class="password">',
