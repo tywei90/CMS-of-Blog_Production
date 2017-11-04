@@ -7,6 +7,7 @@
                 </p>
                 <p>
                     <i class="icon iconfont icon-zhanghu"></i>
+                    <input type="text" style="display:none;" name="hack">
                     <input id="userName"
                            type="text"
                            name="userName"
@@ -15,6 +16,7 @@
                 </p>
                 <p>
                     <i class="icon iconfont icon-mima"></i>
+                    <input type="password" style="display:none;" name="hack">
                     <input id="password"
                            type="password"
                            placeholder="密码"
@@ -31,8 +33,7 @@
 <script>
     import {toggle, bgToggle, pop}    from '../vuex/actions'
     import {get, set}           from '../js/cookieUtil'
-    import $                    from '../js/jquery.min'
-    
+
     export default{
         data(){
             return {
@@ -48,19 +49,6 @@
         },
         ready(){
             this.bgToggle('NightSky');
-            if (navigator.userAgent.toLowerCase().indexOf("chrome") >= 0)
-{
-  var _interval = window.setInterval(function () {
-    var autofills = $('input:-webkit-autofill');
-    if (autofills.length > 0) {
-      window.clearInterval(_interval); // 停止轮询
-      autofills.each(function() {
-        var clone = $(this).clone(true, true);
-        $(this).after(clone).remove();
-      });
-    }
-  }, 20);
-}
         },
         methods: {
             loginRequest(){
