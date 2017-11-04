@@ -7,20 +7,13 @@
                 </p>
                 <p>
                     <i class="icon iconfont icon-zhanghu"></i>
-                    <input type="text" style="display:none;" name="hack">
-                    <input id="userName"
-                           type="text"
-                           name="userName"
-                           placeholder="用户名"
-                           v-model="userName">
+                    <input id="userName" type="text" name="userName" placeholder="用户名" autocomplete="off" style="display:none">
+                    <input id="userName" type="text" name="userName" placeholder="用户名" autocomplete="off" v-model="userName">
                 </p>
                 <p>
                     <i class="icon iconfont icon-mima"></i>
-                    <input type="password" style="display:none;" name="hack">
-                    <input id="password"
-                           type="password"
-                           placeholder="密码"
-                           v-model="password">
+                    <input type="password" placeholder="密码" autocomplete="off" style="display:none">
+                    <input type="password" placeholder="密码" autocomplete="off" v-model="password">
                 </p>
                 <p>
                     <button @click="loginRequest">登陆</button>
