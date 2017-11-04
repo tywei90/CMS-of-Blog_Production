@@ -174,22 +174,6 @@
         },
         ready(){
             this.bgToggle('NightSky');
-            // if(navigator.userAgent.toLowerCase().indexOf("chrome") != -1){  
-                var inputers = document.getElementsByTagName("input");  
-                for(var i=0;i<inputers.length;i++){  
-                    if((inputers[i].type !== "submit") && (inputers[i].type !== "password")){  
-                        var input = inputers[i];  
-                        var inputName = inputers[i].name;  
-                        var inputid = inputers[i].id;  
-                        inputers[i].removeAttribute("name");  
-                        inputers[i].removeAttribute("id");  
-                        setTimeout(function(){  
-                            input.setAttribute("name",inputName);  
-                            input.setAttribute("id",inputid);  
-                        },1)  
-                    }  
-                }  
-            // }  
         },
         methods: {
             handleSendEmail(){

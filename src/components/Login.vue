@@ -7,15 +7,14 @@
                 </p>
                 <p>
                     <i class="icon iconfont icon-zhanghu"></i>
-                    <input id="userName"
+                    <input 
                            type="text"
-                           name="userName"
                            placeholder="用户名"
                            v-model="userName">
                 </p>
                 <p>
                     <i class="icon iconfont icon-mima"></i>
-                    <input id="password"
+                    <input 
                            type="password"
                            placeholder="密码"
                            v-model="password">
