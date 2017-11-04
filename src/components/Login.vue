@@ -7,14 +7,15 @@
                 </p>
                 <p>
                     <i class="icon iconfont icon-zhanghu"></i>
-                    <input 
+                    <input id="userName"
                            type="text"
+                           name="userName"
                            placeholder="用户名"
                            v-model="userName">
                 </p>
                 <p>
                     <i class="icon iconfont icon-mima"></i>
-                    <input 
+                    <input id="password"
                            type="password"
                            placeholder="密码"
                            v-model="password">
@@ -45,7 +46,20 @@
             }
         },
         ready(){
-            this.bgToggle('NightSky')
+            this.bgToggle('NightSky');
+            if (navigator.userAgent.toLowerCase().indexOf("chrome") >= 0)
+{
+  var _interval = window.setInterval(function () {
+    var autofills = $('input:-webkit-autofill');
+    if (autofills.length > 0) {
+      window.clearInterval(_interval); // 停止轮询
+      autofills.each(function() {
+        var clone = $(this).clone(true, true);
+        $(this).after(clone).remove();
+      });
+    }
+  }, 20);
+}
         },
         methods: {
             loginRequest(){
