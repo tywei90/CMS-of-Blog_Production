@@ -73,6 +73,7 @@ let App = Vue.extend({
     },
     store,
     ready(){
+        console.log('sssss');
         $('input').attr('autocomplete', 'off');
     },
     vuex:{

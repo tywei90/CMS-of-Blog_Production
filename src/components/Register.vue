@@ -49,6 +49,7 @@
                             initial="off"
                             detect-change="off"
                             detect-blur="on"
+                            autocomplete="off"
                             v-validate:email="['mailRule']">
                         <label for="email" v-if="emailBlur && $loginValidator.email.mailRule && email">
                             <i class="icon iconfont icon-cuowu"></i>
@@ -64,6 +65,7 @@
                             type="text"
                             name="emailCode"
                             placeholder="请输入您邮箱收到的验证码"
+                            autocomplete="off"
                             v-model="emailCode" >
                     </div>
                     <div @click="handleSendEmail" class="f-fl sendEmailBtn" :class="[!canSendEmail? 'disabled': '']">
