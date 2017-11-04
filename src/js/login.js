@@ -46,7 +46,7 @@ function popLogin(cb) {
             var Core = {
                 init() {
                     ca.$dialog = $('.login-dialog')
-                    ca.$inputs = $('input', ca.$dialog)
+                    ca.$inputs = $('.username-input, .password-input', ca.$dialog)
                     ca.$input1 = $('.username-input', ca.$dialog)
                     ca.$input2 = $('.password-input', ca.$dialog)
                     ca.$clears = $('.icon-cuowu', ca.$dialog)
