@@ -7,12 +7,12 @@
                 </p>
                 <p>
                     <i class="icon iconfont icon-zhanghu"></i>
-                    <input id="userName" type="text" name="userName" placeholder="用户名" autocomplete="off" style="display:none">
-                    <input id="userName" type="text" name="userName" placeholder="用户名" autocomplete="off" v-model="userName">
+                    <input type="text" name="userName" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
+                    <input type="text" name="userName" placeholder="用户名" autocomplete="off" v-model="userName">
                 </p>
                 <p>
                     <i class="icon iconfont icon-mima"></i>
-                    <input type="password" placeholder="密码" autocomplete="off" style="display:none">
+                    <input type="password" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
                     <input type="password" placeholder="密码" autocomplete="off" v-model="password">
                 </p>
                 <p>

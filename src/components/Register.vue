@@ -12,6 +12,7 @@
                 </div>
                 <div class="part f-cb">
                     <div class="f-fr">
+                        <input type="text" name="userName" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
                         <input id="userName"
                             type="text"
                             name="userName"
@@ -20,6 +21,7 @@
                             initial="off"
                             detect-change="off"
                             detect-blur="on"
+                            autocomplete="off"
                             @blur="userBlur=true"
                             @focus="userBlur=false"
                             @valid="onUsernameValid"
@@ -39,6 +41,7 @@
                 </div>
                 <div class="part f-cb">
                     <div class="f-fr">
+                        <input type="email" name="email" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
                         <input id="email"
                             type="email"
                             name="email"
@@ -49,6 +52,7 @@
                             initial="off"
                             detect-change="off"
                             detect-blur="on"
+                            autocomplete="off"
                             v-validate:email="['mailRule']">
                         <label for="email" v-if="emailBlur && $loginValidator.email.mailRule && email">
                             <i class="icon iconfont icon-cuowu"></i>
@@ -60,10 +64,12 @@
                 <div class="part f-cb send-email">
                     <span class="f-fl">验证码：</span>
                     <div class="f-fl">
+                        <input type="text" name="emailCode" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
                         <input id="emailCode"
                             type="text"
                             name="emailCode"
                             placeholder="请输入您邮箱收到的验证码"
+                            autocomplete="off"
                             v-model="emailCode" >
                     </div>
                     <div @click="handleSendEmail" class="f-fl sendEmailBtn" :class="[!canSendEmail? 'disabled': '']">
@@ -73,6 +79,7 @@
                 </div>
                 <!-- <div class="part f-cb">
                     <div class="f-fr">
+                        <input type="text" name="phoneNum" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
                         <input id="phoneNum"
                             type="text"
                             name="phoneNum"
@@ -83,6 +90,7 @@
                             initial="off"
                             detect-change="off"
                             detect-blur="on"
+                            autocomplete="off"
                             v-validate:phone-num="['phoneRule']">
                         <label for="phoneNum" v-if="phoneBlur && $loginValidator.phoneNum.phoneRule">
                             <i class="icon iconfont icon-cuowu"></i>
@@ -98,9 +106,11 @@
                         <span class="f-fl"></span>
                     </div>
                     <div class="f-fr">
+                        <input type="password" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
                         <input id="password1"
                             type="password"
                             placeholder="密码长度4-16个字符"
+                            autocomplete="off"
                             v-model="password1"
                             @input="showPasswordLevel(1, password1)">
                         <label for="password1" v-if="password1!==''">
@@ -113,9 +123,11 @@
                 </div>
                 <div class="part f-cb">
                     <div class="f-fr">
+                        <input type="password" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
                         <input id="password2"
                             type="password"
                             placeholder="密码长度4-16个字符"
+                            autocomplete="off"
                             v-model="password2"
                             @blur="validatePassword2">
                         <label for="password2" v-if="password2!=='' && passwordTip2!==''">
