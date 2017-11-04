@@ -31,7 +31,8 @@
 <script>
     import {toggle, bgToggle, pop}    from '../vuex/actions'
     import {get, set}           from '../js/cookieUtil'
-
+    import $                    from '../js/jquery.min'
+    
     export default{
         data(){
             return {
