@@ -16,13 +16,13 @@ function popLogin(cb) {
             '<li class="username">',
             '<i class="icon iconfont icon-zhanghu"></i>',
             '<input type="text" name="userName" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">',
-            '<input id="userName" type="text" name="userName" placeholder="用户名" autocomplete="off">',
+            '<input class="userName-input" type="text" name="userName" placeholder="用户名" autocomplete="off">',
             '<i class="icon iconfont icon-cuowu f-hide2"></i>',
             '</li>',
             '<li class="password">',
             '<i class="icon iconfont icon-mima"></i>',
             '<input type="password" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">',
-            '<input id="password" type="password" placeholder="密码" autocomplete="off">',
+            '<input class="password-input" type="password" placeholder="密码" autocomplete="off">',
             '<i class="icon iconfont icon-cuowu f-hide2"></i>',
             '</li>',
             '<li class="errorTip f-hide2">',
@@ -47,8 +47,8 @@ function popLogin(cb) {
                 init() {
                     ca.$dialog = $('.login-dialog')
                     ca.$inputs = $('input', ca.$dialog)
-                    ca.$input1 = $('.username input', ca.$dialog)
-                    ca.$input2 = $('.password input', ca.$dialog)
+                    ca.$input1 = $('.username-input', ca.$dialog)
+                    ca.$input2 = $('.password-input', ca.$dialog)
                     ca.$clears = $('.icon-cuowu', ca.$dialog)
                     ca.$forget = $('.others span', ca.$dialog)
                     ca.$register = $('.others em', ca.$dialog)

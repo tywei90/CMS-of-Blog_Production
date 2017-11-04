@@ -5,8 +5,9 @@
             <ul class="password">
                 <li>
                     <i class="icon iconfont icon-mima"></i>
-                    <input type="password" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
+                    <input type="password" name="password1" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
                     <input type="password"
+                           name="password1"
                            placeholder="输入原密码"
                            initial="off"
                            detect-change="off"
@@ -17,8 +18,9 @@
                 </li>
                 <li>
                     <i class="icon iconfont icon-mima"></i>
-                    <input type="password" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
+                    <input type="password" name="password2" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
                     <input type="password"
+                           name="password2"
                            placeholder="输入新密码"
                            initial="off"
                            detect-change="off"
@@ -29,8 +31,9 @@
                 </li>
                 <li>
                     <i class="icon iconfont icon-mima"></i>
-                    <input type="password" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
+                    <input type="password" name="password3" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
                     <input type="password"
+                           name="password3"
                            placeholder="确认新密码"
                            initial="off"
                            detect-change="off"
