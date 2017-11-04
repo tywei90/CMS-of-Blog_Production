@@ -61,7 +61,7 @@ router.post('/genEmailCode', function(req, res, next) {
                     '<p>您好！恭喜您注册成为CMS-of-Blog博客用户。</p><br/>',
                     '<p>这是一封发送验证码的注册认证邮件，请复制一下验证码填写到注册页面以完成注册。</p>',
                     '<p>本次验证码为：' + emailCode + '</p>',
-                    '<p>上述验证码30分钟内有效。如果验证码失效，请您登录网站<a href="https://www.wty90.com/#!/register">CMS-of-Blog博客注册</a>重新申请认证。</p>',
+                    '<p>上述验证码30分钟内有效。如果验证码失效，请您登录网站<a href="https://cms.wty90.com/#!/register">CMS-of-Blog博客注册</a>重新申请认证。</p>',
                     '<p>感谢您注册成为CMS-of-Blog博客用户！</p><br/>',
                     '<p>CMS-of-Blog开发团队</p>',
                     '<p>'+ (new Date()).toLocaleString() + '</p>'
@@ -117,7 +117,7 @@ router.post('/genEmailCode', function(req, res, next) {
                     '<p>您好！恭喜您注册成为CMS-of-Blog博客用户。</p><br/>',
                     '<p>这是一封发送验证码的注册认证邮件，请复制一下验证码填写到注册页面以完成注册。</p>',
                     '<p>本次验证码为：' + emailCode + '</p>',
-                    '<p>上述验证码30分钟内有效。如果验证码失效，请您登录网站<a href="https://www.wty90.com/#!/register">CMS-of-Blog博客注册</a>重新申请认证。</p>',
+                    '<p>上述验证码30分钟内有效。如果验证码失效，请您登录网站<a href="https://cms.wty90.com/#!/register">CMS-of-Blog博客注册</a>重新申请认证。</p>',
                     '<p>感谢您注册成为CMS-of-Blog博客用户！</p><br/>',
                     '<p>CMS-of-Blog开发团队</p>',
                     '<p>'+ (new Date()).toLocaleString() + '</p>'

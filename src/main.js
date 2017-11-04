@@ -18,6 +18,8 @@ import MyCanvas         from './components/MyCanvas.vue'
 
 import store            from './vuex/store'
 import {pop as popx}    from './vuex/actions'
+import $                from '../js/jquery.min'
+
 
 Vue.use(VueResource)
 Vue.use(VueValidator)
@@ -71,20 +73,7 @@ let App = Vue.extend({
     },
     store,
     ready(){
-        let style=[
-            `
-            background-image:-webkit-gradient( 
-            linear, left top, right top,
-            color-stop(0, #f22), color-stop(0.15, #f2f), 
-            color-stop(0.3, #22f), color-stop(0.45, #2ff), 
-            color-stop(0.6, #2f2),color-stop(0.75, #2f2), 
-            color-stop(0.9, #ff2), color-stop(1, #f22) );
-            color:transparent;
-            -webkit-background-clip: text;
-            font-size:2em
-            `
-        ].join(';')
-        // console.log('%c呜呜你要对我的代码做什么...', style);
+        $('input').attr('autocomplete', 'off');
     },
     vuex:{
         actions:{
