@@ -208,9 +208,7 @@
                 　　timeout : 5000, //超时时间设置，单位毫秒
                 　　type : 'post',  
                 　　data :{email: me.email},  
-                　　success: function(response){ 
-                        console.log(response);
-                        let res = JSON.parse(response)
+                　　success: function(res){ 
                         let code = res.retcode
                         let desc = res.retdesc
                         switch (code){
