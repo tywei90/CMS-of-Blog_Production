@@ -202,7 +202,8 @@
                 }
                 this.sendEmailState=2;
                 this.$http.post('/web/genEmailCode', {
-                    email: this.email
+                    params: {email: this.email},
+                    _timeout: 5000 //设置超时时间
                 }).then((response)=> {
                     let res = JSON.parse(response.body)
                     let code = res.retcode
@@ -224,8 +225,13 @@
                             this.sendEmailState=1;
                             this.pop(desc)
                     }
-                }, (response)=> {
-                    console.log(response)
+                }, (err)=> {
+                    this.sendEmailState=1;
+                    if(err.status == 408){
+                        this.pop('请检查邮箱是否存在');
+                    }else{
+                        console.log(err)
+                    }
                 })
             },
             validatePassword2(){
