@@ -209,7 +209,8 @@
                 　　type : 'post',  
                 　　data :{email: me.email},  
                 　　success: function(response){ 
-                        let res = JSON.parse(response.body)
+                        console.log(response);
+                        let res = JSON.parse(response)
                         let code = res.retcode
                         let desc = res.retdesc
                         switch (code){
