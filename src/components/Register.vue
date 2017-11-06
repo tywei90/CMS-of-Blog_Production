@@ -205,6 +205,7 @@
                     {email: this.email}, 
                     {timeout: 5000}
                 ).then((response)=> {
+                    console.log(response)
                     let res = JSON.parse(response.body)
                     let code = res.retcode
                     let desc = res.retdesc
