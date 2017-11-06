@@ -226,14 +226,15 @@
                             this.sendEmailState=1;
                             this.pop(desc)
                     }
-                }, (err)=> {
+                }, (response)=> {
+                    console.log(response)
                     this.sendEmailState=1;
-                    if(err.status == 408){
+                    if(response.status == 408){
                         this.pop('请检查邮箱是否存在');
                     }else{
-                        console.log(err)
+                        console.log(response)
                     }
-                }).catch((err)=>{console.log(err)})
+                }).catch((response)=>{console.log(response)})
             },
             validatePassword2(){
                 if(this.password2.length < 4){
