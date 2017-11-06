@@ -72,9 +72,11 @@
                             autocomplete="off"
                             v-model="emailCode" >
                     </div>
-                    <div @click="handleSendEmail" class="f-fl sendEmailBtn" :class="[!canSendEmail? 'disabled': '']">
-                        <span v-if="canSendEmail">发送验证码</span>
-                        <span v-if="!canSendEmail">{{countDown}}s后可再次发送</span>
+                    <div @click="handleSendEmail" class="f-fl sendEmailBtn" :class="[sendEmailState==2||sendEmailState==3? 'disabled': '']">
+                        <span v-if="sendEmailState==1">发送验证码</span>
+                        <span v-if="sendEmailState==2">发送中...</span>
+                        <span v-if="sendEmailState==3">{{countDown}}s后可再次发送</span>
+                        <span v-if="sendEmailState==4">再次发送</span>
                     </div>
                 </div>
                 <!-- <div class="part f-cb">
@@ -156,7 +158,7 @@
                 emailBlur: false,
                 emailCode: '',
                 emailCodeBlur: false,
-                canSendEmail: true,
+                sendEmailState: 1,
                 countDown: 60,
                 // phoneNum: '',
                 // phoneBlur: false,
@@ -187,7 +189,7 @@
         },
         methods: {
             handleSendEmail(){
-                if(!this.canSendEmail){
+                if(this.sendEmailState==2||this.sendEmailState==3){
                     return
                 }
                 if(!this.email){
@@ -198,6 +200,7 @@
                     this.pop('邮箱格式错误！')
                     return
                 }
+                this.sendEmailState=2;
                 this.$http.post('/web/genEmailCode', {
                     email: this.email
                 }).then((response)=> {
@@ -206,10 +209,10 @@
                     let desc = res.retdesc
                     switch (code){
                         case 200:
-                            this.canSendEmail = false;
+                            this.sendEmailState=3;
                             var timer = setInterval(()=>{
                                 if(this.countDown <= 0){
-                                    this.canSendEmail = true
+                                    this.sendEmailState = 4
                                     this.countDown = 60
                                     window.clearInterval(timer)
                                     return
@@ -218,6 +221,7 @@
                             }, 1000)
                             break
                         default:
+                            this.sendEmailState=1;
                             this.pop(desc)
                     }
                 }, (response)=> {
