@@ -233,7 +233,7 @@
                     }else{
                         console.log(err)
                     }
-                })
+                }).catch((err)=>{console.log(err)})
             },
             validatePassword2(){
                 if(this.password2.length < 4){
