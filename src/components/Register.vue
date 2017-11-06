@@ -149,6 +149,7 @@
     import {toggle, bgToggle, pop}        from '../vuex/actions'
     import {get, set}                         from '../js/cookieUtil'
     import {userRule, phoneRule, getPasswordLevel, mailRule}      from '../js/validate'
+    import $                    from '../js/jquery.min'
     export default{
         data(){
             return {
@@ -189,6 +190,7 @@
         },
         methods: {
             handleSendEmail(){
+                var me = this;
                 if(this.sendEmailState==2||this.sendEmailState==3){
                     return
                 }
@@ -201,40 +203,40 @@
                     return
                 }
                 this.sendEmailState=2;
-                this.$http.post('/web/genEmailCode', 
-                    {email: this.email}, 
-                    {timeout: 5000}
-                ).then((response)=> {
-                    console.log(response)
-                    let res = JSON.parse(response.body)
-                    let code = res.retcode
-                    let desc = res.retdesc
-                    switch (code){
-                        case 200:
-                            this.sendEmailState=3;
-                            var timer = setInterval(()=>{
-                                if(this.countDown <= 0){
-                                    this.sendEmailState = 4
-                                    this.countDown = 60
-                                    window.clearInterval(timer)
-                                    return
-                                }
-                                this.countDown = this.countDown - 1
-                            }, 1000)
-                            break
-                        default:
-                            this.sendEmailState=1;
-                            this.pop(desc)
-                    }
-                }, (response)=> {
-                    console.log(response)
-                    this.sendEmailState=1;
-                    if(response.status == 408){
-                        this.pop('请检查邮箱是否存在');
-                    }else{
-                        console.log(response)
-                    }
-                }).catch((response)=>{console.log(response)})
+                $.ajax({
+                　　url:'/web/genEmailCode',  
+                　　timeout : 5000, //超时时间设置，单位毫秒
+                　　type : 'post',  
+                　　data :{email: me.email},  
+                　　success: function(response){ 
+                        let res = JSON.parse(response.body)
+                        let code = res.retcode
+                        let desc = res.retdesc
+                        switch (code){
+                            case 200:
+                                me.sendEmailState=3;
+                                var timer = setInterval(()=>{
+                                    if(me.countDown <= 0){
+                                        me.sendEmailState = 4
+                                        me.countDown = 60
+                                        window.clearInterval(timer)
+                                        return
+                                    }
+                                    me.countDown = me.countDown - 1
+                                }, 1000)
+                                break
+                            default:
+                                me.sendEmailState=1;
+                                me.pop(desc)
+                        }
+                　　},
+                　　complete: function(XMLHttpRequest,status){ //请求完成后最终执行参数
+                　　　　if(status=='timeout'){
+                 　　　　　   me.sendEmailState=1;
+                            me.pop('请检查邮箱是否存在');
+                　　　　}
+                　　}
+                });
             },
             validatePassword2(){
                 if(this.password2.length < 4){
