@@ -201,9 +201,10 @@
                     return
                 }
                 this.sendEmailState=2;
-                this.$http.post('/web/genEmailCode', {
+                this.$http.post({
+                    url: '/web/genEmailCode',
                     params: {email: this.email},
-                    _timeout: 5000 //设置超时时间
+                    timeout: 5000 //设置超时时间
                 }).then((response)=> {
                     let res = JSON.parse(response.body)
                     let code = res.retcode
