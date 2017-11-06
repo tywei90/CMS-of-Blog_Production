@@ -5,13 +5,13 @@
             <ul class="password">
                 <li>
                     <i class="icon iconfont icon-mima"></i>
-                    <input type="password" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
+                    <input type="password" placeholder="去除chrome自动完成" autocomplete="false" style="display:none">
                     <input type="password"
                            placeholder="输入原密码"
                            initial="off"
                            detect-change="off"
                            detect-blur="off"
-                           autocomplete="off"
+                           autocomplete="false"
                            v-validate:password1="passwordRule"
                            v-model="opw">
                 </li>
