@@ -45,10 +45,13 @@
                 let date = new Date(Date.now() + 60000 * 30)
                 let hostName = location.hostname
                 set('user', loginUserName, date, '/', hostName)
-            }
-            if (loginUserName && loginUserName!==visitUserName) {
-                // 改成前端跳转地址，弹窗会有bug, 因为显示的是登录账号相关内容
-                location.href = '/' + loginUserName + '#!/console'
+                // 登录账号和进入编辑的账号不一致
+                if (loginUserName && loginUserName!==visitUserName) {
+                    // 改成前端跳转地址，弹窗会有bug, 因为显示的是登录账号相关内容
+                    location.href = '/' + loginUserName + '#!/console'
+                }
+            }else{
+                location.href = '/#!/login' + '?backUrl=' + encodeURIComponent(document.URL);
             }
         },
         components: {
