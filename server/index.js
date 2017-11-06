@@ -218,7 +218,7 @@ router.post('/validateUsername', function(req, res, next) {
 
 router.get('/console/article', function(req, res, next) {
     var id = req.query.id
-    var name = req.cookies.user
+    var name = req.cookies.username
     var resBody = {
         retcode: '',
         retdesc: '',
@@ -340,7 +340,7 @@ router.post('/common/articleList', function(req, res, next) {
 })
 
 router.get('/console/articleList', function(req, res, next) {
-    var name = req.cookies.user
+    var name = req.cookies.username
     var resBody = {
         retcode: '',
         retdesc: '',
@@ -480,7 +480,7 @@ router.post('/saveArticle', function(req, res, next) {
     // 获取当前页面地址的path, 防止不同账号登录导致Bug
     var referer = req.headers.referer
     var visitUsername = referer.slice(referer.lastIndexOf('/') + 1)
-    var name = req.cookies.user
+    var name = req.cookies.username
     var resBody = {
         retcode: '',
         retdesc: '',
@@ -533,7 +533,7 @@ router.post('/saveArticle', function(req, res, next) {
 })
 
 router.post('/common/getLinks', function(req, res, next) {
-    console.log(init.links)
+    // console.log(init.links)
     var name = req.body.name
     var resBody = {
         retcode: '',
@@ -571,7 +571,7 @@ router.post('/common/getLinks', function(req, res, next) {
 })
 
 router.get('/console/getLinks', function(req, res, next) {
-    var name = req.cookies.user
+    var name = req.cookies.username
     var resBody = {
         retcode: '',
         retdesc: '',
@@ -604,7 +604,7 @@ router.get('/console/getLinks', function(req, res, next) {
 router.post('/setLinks', function(req, res, next) {
     var referer = req.headers.referer
     var visitUsername = referer.slice(referer.lastIndexOf('/') + 1)
-    var name = req.cookies.user
+    var name = req.cookies.username
     var resBody = {
         retcode: '',
         retdesc: '',
@@ -647,7 +647,7 @@ router.post('/setLinks', function(req, res, next) {
 router.post('/savePw', function(req, res, next) {
     var referer = req.headers.referer
     var visitUsername = referer.slice(referer.lastIndexOf('/') + 1)
-    var name = req.cookies.user,
+    var name = req.cookies.username,
         oldPassword = req.body.oldPassword,
         newPassword = req.body.newPassword,
         resBody = {
@@ -721,7 +721,7 @@ router.post('/savePw', function(req, res, next) {
 router.post('/deleteArticle', function(req, res, next) {
     var referer = req.headers.referer
     var visitUsername = referer.slice(referer.lastIndexOf('/') + 1)
-    var name = req.cookies.user
+    var name = req.cookies.username
     var resBody = {
         retcode: '',
         retdesc: '',
@@ -763,7 +763,7 @@ router.post('/deleteArticle', function(req, res, next) {
 router.post('/deleteUser', function(req, res, next) {
     var referer = req.headers.referer
     var visitUsername = referer.slice(referer.lastIndexOf('/') + 1)
-    var name = req.cookies.user
+    var name = req.cookies.username
     var resBody = {
         retcode: '',
         retdesc: '',

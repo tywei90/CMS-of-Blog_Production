@@ -57,11 +57,11 @@
         },
         created(){
             // 登录状态进入页面，重新计时cookie失效时间
-            this.userName = get('user')
+            this.userName = get('username')
             if (this.userName) {
                 let date = new Date(Date.now() + 60000 * 30)
                 let hostName = location.hostname
-                set('user', this.userName, date, '/', hostName)
+                set('username', this.userName, date, '/', hostName)
             }
             // 请求所有已注册的用户
             this.$http.get('/web/registedUsers')

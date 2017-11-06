@@ -34,7 +34,7 @@
 
     export default{
         created(){
-            let loginUserName = get('user')
+            let loginUserName = get('username')
             // 获取访问博客的用户名(地址栏上)
             var href = document.URL
             var indexEnd = href.lastIndexOf('#!')
@@ -44,7 +44,7 @@
             if (loginUserName) {
                 let date = new Date(Date.now() + 60000 * 30)
                 let hostName = location.hostname
-                set('user', loginUserName, date, '/', hostName)
+                set('username', loginUserName, date, '/', hostName)
                 // 登录账号和进入编辑的账号不一致
                 if (loginUserName && loginUserName!==visitUserName) {
                     // 改成前端跳转地址，弹窗会有bug, 因为显示的是登录账号相关内容

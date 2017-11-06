@@ -45,11 +45,11 @@
         },
         created(){
             // 登录状态进入页面，重新计时cookie失效时间
-            let userName = get('user')
+            let userName = get('username')
             if (userName) {
                 let date = new Date(Date.now() + 60000 * 30)
                 let hostName = location.hostname
-                set('user', userName, date, '/', hostName)
+                set('username', userName, date, '/', hostName)
             }
             // 获取访问博客的用户名(地址栏上)
             var href = document.URL

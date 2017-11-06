@@ -177,7 +177,7 @@
             mailRule
         },
         created(){
-            let userName = get('user')
+            let userName = get('username')
             if (userName) {
                 location.href='/' + userName + '#!/'
             }
@@ -343,7 +343,7 @@
                     case 200:
                         let date = new Date(Date.now() + 60000 * 30)
                         let hostName = location.hostname
-                        set('user', data.userName, date, '/', hostName)
+                        set('username', data.userName, date, '/', hostName)
                         this.pop({
                             css: 'regist-suc',
                             content: '<i class="icon iconfont icon-dui"></i>恭喜，注册成功！',

@@ -24,14 +24,14 @@
             }
         },
         created(){
-            this.userName = get('user')
+            this.userName = get('username')
         },
         methods: {
             toHome() {
                 location.href = '/#!/'
             },
             logout() {
-                unset('user', '/', location.hostname)
+                unset('username', '/', location.hostname)
                 location.href = '/#!/login'
             }
         },

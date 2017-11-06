@@ -35,7 +35,7 @@
             }
         },
         created(){
-            let userName = get('user')
+            let userName = get('username')
             if (userName) {
                 location.href='/' + userName + '#!/console'
             }
@@ -76,7 +76,7 @@
                         this.userName = name
                         let date = new Date(Date.now() + 60000 * 30)
                         let hostName = location.hostname
-                        set('user', this.userName, date, '/', hostName)
+                        set('username', this.userName, date, '/', hostName)
                         // 判断是否有backUrl
                         var backUrl = this.$route.query.backUrl
                         if(backUrl){

@@ -50,7 +50,7 @@
             var indexStart = href.lastIndexOf('/', indexEnd) + 1
             this.visitUserName = href.slice(indexStart, indexEnd)
 
-            this.loginUserName = get('user')
+            this.loginUserName = get('username')
             let name = this.loginUserName || this.visitUserName || ''
             this.$http.post('/web/common/getLinks', {name: name})
             .then((response)=> {

@@ -127,7 +127,7 @@ function popLogin(cb) {
                         case 200:
                             let date = new Date(Date.now() + 60000 * 30)
                             let hostName = location.hostname
-                            set('user', name, date, '/', hostName)
+                            set('username', name, date, '/', hostName)
                             me.pop()
                             // 如果有传回调函数，则执行回调
                             if(typeof cb === 'function'){
