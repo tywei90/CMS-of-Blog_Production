@@ -1,16 +1,15 @@
 
 function get(name){
-    let cookieName = encodeURIComponent(name) + '=',
-        cookieStart = document.cookie.indexOf(cookieName),
-        cookieValue = null,
-        cookieEnd=null
-
-    if (cookieStart > -1) {
-        cookieEnd = document.cookie.indexOf(';', cookieStart)
-        if (cookieEnd == -1)cookieEnd = document.cookie.length
+    var cookieName = encodeURIComponent(name);
+    var cookieArr = document.cookie.split(';');
+    var cookieValue = null;
+    for(var i=0,len=cookieArr.length; i<len; i++){
+        var index = cookieArr[i].indexOf(cookieName);
+        if(index != -1){
+            cookieValue = decodeURIComponent(cookieArr[i].split('=')[1]);
+            break
+        }
     }
-    cookieValue = decodeURIComponent(document.cookie.substr(cookieStart
-        + cookieName.length, cookieEnd))
     return cookieValue
 }
 function set(name, value, expires, path, domain, secure){
