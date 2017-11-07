@@ -4,6 +4,20 @@ html(lang="zh-CN")
     title #{title}
     meta(name="viewport" content="width=device-width, initial-scale=1")
     link(rel="icon" href="/public/favicon.ico")
+    script(async src='https://www.googletagmanager.com/gtag/js?id=UA-109285692-1')
+    script(type='text/javascript').
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-109285692-1');
+    script(type='text/javascript').
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?c15e73a33696ca60d3c3f1b5a3500233";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
   body
     waiting(v-if='waiting')
     pop(v-show='pop')
