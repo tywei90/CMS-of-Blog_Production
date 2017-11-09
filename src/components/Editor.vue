@@ -41,7 +41,7 @@
                 input: '',
                 date: '',
                 id: '',
-                view: 'edit'
+                view: screen.width > 700? 'inspect' : 'edit'
             }
         },
         filters: {

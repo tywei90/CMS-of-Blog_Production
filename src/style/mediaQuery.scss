@@ -56,7 +56,7 @@ section.container {
 }
 
 @media screen and (max-width: 700px) {
-    #main{
+    #main {
         header.myHeader {
             padding: 20px 0;
             margin-bottom: 20px;
@@ -107,7 +107,7 @@ section.container {
         footer {
             width: 100%;
         }
-        footer div.copyright{
+        footer div.copyright {
             height: 40px;
             line-height: 40px;
         }
@@ -126,7 +126,7 @@ section.container {
         }
         .archive .item {
             padding-left: 20px;
-            ul{
+            ul {
                 font-size: 14px;
                 margin-left: 20px;
                 li {
@@ -134,60 +134,60 @@ section.container {
                     .date {
                         width: 70px;
                     }
-                    .title{
+                    .title {
                         width: calc(100vw - 150px);
                         overflow: hidden;
                         white-space: nowrap;
-                        text-overflow:ellipsis;
+                        text-overflow: ellipsis;
                         margin-left: 10px;
                     }
                 }
             }
         }
-        .login{
-            input{
+        .login {
+            input {
                 width: 250px;
             }
         }
-        .register{
+        .register {
             position: static;
-            .form{
+            .form {
                 padding: 60px 15px;
                 width: 100%;
                 box-sizing: border-box;
-                .part{
+                .part {
                     height: 80px;
                     font-size: 13px;
                     padding-right: 0;
                     padding-left: 0;
-                    label{
+                    label {
                         position: absolute;
                         width: calc(100vw - 140px);
                     }
-                    &>span{
+                    &>span {
                         box-sizing: border-box;
                         width: 90px;
                         text-align: right;
                     }
-                    span.f-fr{
-                        float:left;
+                    span.f-fr {
+                        float: left;
                     }
-                    input{
+                    input {
                         width: calc(100vw - 160px);
                     }
-                    .sendEmailBtn{
+                    .sendEmailBtn {
                         padding: 2px 4px;
                         margin-top: 3px;
                         position: absolute;
                         right: 20px;
                     }
-                    div.f-fr{
+                    div.f-fr {
                         margin-right: 20px;
                     }
                 }
-                .part:last-child{
+                .part:last-child {
                     margin-top: 20px;
-                    span{
+                    span {
                         width: 100%;
                         text-align: center;
                         padding-bottom: 10px;
@@ -195,11 +195,143 @@ section.container {
                 }
             }
         }
+        .console {
+            top: 0;
+            padding-top: 100px;
+            left: -200px;
+            transition: left 0.3s;
+            z-index: 20;
+            background-color: rgba(158, 158, 158, 0.8);
+            .navigation {
+                padding-top: 50px;
+            }
+        }
+        .aside-icon {
+            z-index: 30;
+            position: absolute;
+            top: 17px;
+            color: #fff;
+            left: 20px
+        }
+        .mask {
+            position: fixed;
+            display: none;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(0, 0, 0, .8);
+            z-index: 15;
+        }
+        .naviHeader {
+            .home {
+                margin-left: 50px;
+                width: 50px;
+                .icon {
+                    font-size: 25px;
+                }
+            }
+            .user {
+                right: 10px;
+                font-size: 14px;
+                button {
+                    width: initial;
+                }
+            }
+        }
+        .articleList {
+            width: 100%;
+            left: 0;
+            button {
+                width: 150px;
+                height: 40px;
+                margin: 60px 0;
+                font-size: 15px;
+            }
+            table {
+                width: 94%;
+                th {
+                    min-width: 0px;
+                    box-sizing: border-box;
+                }
+                td {
+                    font-size: 13px;
+                }
+                th:nth-child(1) {
+                    width: 40%;
+                }
+                th:nth-child(2) {
+                    width: 30%;
+                }
+                th:nth-child(3) {
+                    width: 30%;
+                }
+                td:nth-child(1) {
+                    padding: 0 10px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+                td:nth-child(3) {
+                    .icon:after {
+                        width: 0px;
+                    }
+                    .icon:last-child {
+                        padding-left: 4px;
+                    }
+                }
+            }
+        }
+        .editor {
+            width: 100%;
+            left: 0px;
+            .title {
+                width: 90%;
+                font-size: 20px;
+                padding: 0;
+            }
+            .edit, .inspect {
+                margin: 0 auto;
+                width: 90%;
+                textarea, article{
+                    font-size: 13px;
+                    padding: 0px;
+                }
+            }
+            .edit {
+                textarea{
+                    width: calc(100% - 30px);
+                } 
+                article{
+                    padding: 0;
+                }
+                .toggle{
+                    margin-left: 10px;
+                    margin-right: 0px;
+                }
+            }
+            .inspect{
+                textarea{
+                    width: 0;
+                    padding: 0;
+                }
+                article{
+                    width: calc(100% - 30px);
+                }
+                .toggle{
+                    margin-left: 0px;
+                    margin-right: 10px;
+                }
+            }
+            .panel{
+                input{
+                    margin-top:-2px;
+                    width: 120px;
+                }
+            }
+        }
     }
 }
-
-
-
 
 
 
