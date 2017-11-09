@@ -54,4 +54,24 @@
             padding: 15px 5px 25px;
         }
     }
+    .toast-wrap{
+        border: none;
+        border-radius: 5px;
+        animation: scaleOutIn 0 alternate;
+        .close,.title,.button{
+            display: none;
+        }
+        .content{
+            padding: 20px 10px;
+            font-size: 14px;
+            min-height: 0px;
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+        }
+    }
 }
+
+
+
+
+

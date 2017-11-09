@@ -38,9 +38,14 @@
         filters: {
             dateParse: value=> {
                 let d = new Date(value)
-                return d.getFullYear() + '年' +
+                if(window.innerWidth < 700){
+                    return (d.getMonth() + 1) + '月' +
+                        d.getDate() + '日'
+                }else{
+                    return d.getFullYear() + '年' +
                         (d.getMonth() + 1) + '月' +
                         d.getDate() + '日'
+                }
             }
         },
         created(){

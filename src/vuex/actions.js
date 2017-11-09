@@ -21,6 +21,7 @@ function pop({dispatch}, para) {
 	para.pop = !para.content? false: true
 	para.showClose = para.showClose === undefined? true: para.showClose
 	para.title = para.title === undefined? '温馨提示': para.title
+	para.wapGoDialog = !!para.wapGoDialog
 	// 没有传参数
 	if(!para.btn1){
 		para.btn1 = '我知道了|normal'

@@ -76,7 +76,6 @@
             })
         },
         methods:{
-            popLogin,
             goHome(){
                 if(this.loginUserName){
                     // 登录的话直接去自己的主页
@@ -88,10 +87,15 @@
             },
             // 主要是想拦截非登录状态进入博客设置页面
             preIntercept(linkUrl, newPage){
-                this.popLogin(function(){
-                    // 不能直接在登录成功之后新开窗口，这种没有用户操作的新开页面是不被允许的！
-                    location.href = linkUrl
-                })
+                if(screen.width < 700){
+                    location.href = '/#!/login' + '?backUrl=' + encodeURIComponent(linkUrl);
+                }else{
+                    popLogin.bind(this)(
+                        function(){
+                        // 不能直接在登录成功之后新开窗口，这种没有用户操作的新开页面是不被允许的！
+                        location.href = linkUrl
+                    });
+                }
             }
         },
         vuex:{

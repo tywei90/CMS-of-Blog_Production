@@ -16,6 +16,7 @@
         按钮参数不传，文案默认'我知道了'，点击关闭弹窗
     init: 弹窗建立后的初始化函数，可以用来处理复杂交互的弹窗(注意弹窗一定要是从pop为false变成true才会执行)
     destroy: 弹窗消失之后的回调函数
+    wapGoDialog: 在移动端时，要不要走弹窗，默认false，走toast
 -->
 
 <template>
@@ -100,9 +101,22 @@
                             this.pop()
                         }
                     })
+                    var $dialog = $('.dialog-wrap');
+                    // 移动端改成类似toast，通过更改样式，既不需要增加toast组件，也不需要更改代码，统一pop方法
+                    if(screen.width < 700 && !this.getPopPara.wapGoDialog){
+                        $dialog.addClass('toast-wrap');
+                        setTimeout(()=>{
+                            this.pop();
+                        }, 2000)
+                    }
+                    //调整弹窗居中
+                    let width = $dialog.width();
+                    let height = $dialog.height();
+                    $dialog.css('marginTop', - height/2);
+                    $dialog.css('marginLeft', - width/2);
                     // 弹窗建立的初始化函数
-                    let fn = this.getPopPara.init
-                    typeof fn == 'function' && fn()
+                    let fn = this.getPopPara.init;
+                    typeof fn == 'function' && fn();
                 }else{
                     // 弹窗关闭时
                     // 注销弹窗打开时注册的事件

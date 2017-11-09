@@ -68,39 +68,17 @@
                         <input id="emailCode"
                             type="text"
                             name="emailCode"
-                            placeholder="请输入您邮箱收到的验证码"
+                            placeholder="请输入验证码"
                             autocomplete="off"
                             v-model="emailCode" >
                     </div>
                     <div @click="handleSendEmail" class="f-fl sendEmailBtn" :class="[sendEmailState==2||sendEmailState==3? 'disabled': '']">
                         <span v-if="sendEmailState==1">发送验证码</span>
                         <span v-if="sendEmailState==2">发送中...</span>
-                        <span v-if="sendEmailState==3">{{countDown}}s后可再次发送</span>
+                        <span v-if="sendEmailState==3">{{countDown}}s后可再发</span>
                         <span v-if="sendEmailState==4">再次发送</span>
                     </div>
                 </div>
-                <!-- <div class="part f-cb">
-                    <div class="f-fr">
-                        <input type="text" name="phoneNum" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
-                        <input id="phoneNum"
-                            type="text"
-                            name="phoneNum"
-                            placeholder="请输入您的手机号码"
-                            v-model="phoneNum"
-                            @blur="phoneBlur=true"
-                            @focus="phoneBlur=false"
-                            initial="off"
-                            detect-change="off"
-                            detect-blur="on"
-                            autocomplete="off"
-                            v-validate:phone-num="['phoneRule']">
-                        <label for="phoneNum" v-if="phoneBlur && $loginValidator.phoneNum.phoneRule">
-                            <i class="icon iconfont icon-cuowu"></i>
-                            <span>手机号码格式不正确</span>
-                        </label>
-                    </div>
-                    <span class="f-fr">手机号：</span>
-                </div> -->
                 <div class="part f-cb">
                     <div class="password-level f-cb" :class="levelPointer1" v-if="passwordLevel1 > 0">
                         <span class="f-fl"></span>

@@ -6,7 +6,17 @@
     </div>
 </template>
 <script>
-    export default{}
+	import $  from '../js/jquery.min'
+    export default{
+    	ready(){
+    		// 修改页面超过一屏底部白色的bug
+    		var h1 = $(document).height();
+            var h2 = $(window).height();
+            setTimeout(()=>{
+                $('.nightSky').css('bottom', (h2 - h1)+'px');
+            }, 0)
+    	}
+    }
 </script>
 <style lang="sass">
 @import "../style/components/NightSky.scss";

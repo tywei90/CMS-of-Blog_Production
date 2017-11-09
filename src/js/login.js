@@ -45,17 +45,22 @@ function popLogin(cb) {
             var ca = {}
             var Core = {
                 init() {
-                    ca.$dialog = $('.login-dialog')
-                    ca.$inputs = $('.username-input, .password-input', ca.$dialog)
-                    ca.$input1 = $('.username-input', ca.$dialog)
-                    ca.$input2 = $('.password-input', ca.$dialog)
-                    ca.$clears = $('.icon-cuowu', ca.$dialog)
-                    ca.$forget = $('.others span', ca.$dialog)
-                    ca.$register = $('.others em', ca.$dialog)
-                    ca.$errorTip = $('.errorTip', ca.$dialog)
-                    ca.$errorTipText = $('.errorTip span', ca.$dialog)
-                    ca.$btn = $('.loginBtn .btn', ca.$dialog)
-                    this.initEvent()
+                    if(screen.width < 700){
+                        location.href = '/#!/login' + '?backUrl=' + encodeURIComponent(document.URL);
+                        me.pop();
+                    }else{
+                        ca.$dialog = $('.login-dialog')
+                        ca.$inputs = $('.username-input, .password-input', ca.$dialog)
+                        ca.$input1 = $('.username-input', ca.$dialog)
+                        ca.$input2 = $('.password-input', ca.$dialog)
+                        ca.$clears = $('.icon-cuowu', ca.$dialog)
+                        ca.$forget = $('.others span', ca.$dialog)
+                        ca.$register = $('.others em', ca.$dialog)
+                        ca.$errorTip = $('.errorTip', ca.$dialog)
+                        ca.$errorTipText = $('.errorTip span', ca.$dialog)
+                        ca.$btn = $('.loginBtn .btn', ca.$dialog)
+                        this.initEvent()
+                    }
                 },
                 initEvent() {
                     ca.$inputs.on('focus keydown keyup', function(event) {
