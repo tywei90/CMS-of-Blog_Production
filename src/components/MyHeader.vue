@@ -32,8 +32,8 @@
 </template>
 <script>
     import {get}        from '../js/cookieUtil'
-    import popLogin     from '../js/login'
     import {pop}        from '../vuex/actions'
+    import popLogin     from '../js/login'
 
     export default{
         data(){
@@ -68,7 +68,8 @@
                             btn1: '返回',
                             cb1: ()=>{
                                 window.history.back(-1); 
-                            }
+                            },
+                            wapGoDialog: true
                         })
                 }
             }, (response)=> {
@@ -76,6 +77,7 @@
             })
         },
         methods:{
+            popLogin,
             goHome(){
                 if(this.loginUserName){
                     // 登录的话直接去自己的主页

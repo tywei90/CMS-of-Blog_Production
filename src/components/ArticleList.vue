@@ -97,7 +97,8 @@
                                             content:'删除成功!',
                                             cb1:function () {
                                                 this.articles.splice(index,1)
-                                            }.bind(this)
+                                            }.bind(this),
+                                            wapGoDialog: true
                                         })
                                         break
                                     case 410:
@@ -110,7 +111,8 @@
                                             btn1: '确定',
                                             cb1: ()=>{
                                                 location.href = data.name + '#!/console'
-                                            }
+                                            },
+                                            wapGoDialog: true
                                         })
                                         break
                                     default:
@@ -120,7 +122,8 @@
                                 console.log(response)
                             })
                     }.bind(this),
-                    btn2: '取消'
+                    btn2: '取消',
+                    wapGoDialog: true
                 })
             },
             detail(id){

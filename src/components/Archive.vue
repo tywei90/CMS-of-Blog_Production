@@ -79,7 +79,8 @@
                                 btn1: '去首页',
                                 cb1: ()=>{
                                      location.href="/#!/"
-                                }
+                                },
+                                wapGoDialog: true
                             })
                             break
                         default:
@@ -88,7 +89,8 @@
                                 btn1: '返回',
                                 cb1: ()=>{
                                     window.history.back(-1); 
-                                }
+                                },
+                                wapGoDialog: true
                             })
                     }
                     

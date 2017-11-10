@@ -341,7 +341,8 @@
                             btn1: '去主页',
                             cb1: function () {
                                 location.href='/' + this.userName + '#!/'
-                            }.bind(this)
+                            }.bind(this),
+                            wapGoDialog: true
                         })
                         break
                     default: 

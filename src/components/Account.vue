@@ -103,6 +103,7 @@
                                         unset('username', '/', location.hostname)
                                         location.href = "/#!/login"
                                     },
+                                    wapGoDialog: true
                                 })
                                 break
                             case 410:
@@ -115,7 +116,8 @@
                                     btn1: '确定',
                                     cb1: ()=>{
                                         location.href = data.name + '#!/console'
-                                    }
+                                    },
+                                    wapGoDialog: true
                                 })
                                 break
                             default:
@@ -140,7 +142,8 @@
                     cb1: ()=>{
                         this.deleteUser()
                     },
-                    btn2: '取消'
+                    btn2: '取消',
+                    wapGoDialog: true
                 })
             },
             deleteUser(){
@@ -160,7 +163,8 @@
                                     btn1: '再去首页看看',
                                     cb1:function () {
                                         location.href = '/#!/'
-                                    }
+                                    },
+                                    wapGoDialog: true
                                 })
                                 break
                             case 410:
@@ -173,7 +177,8 @@
                                     btn1: '确定',
                                     cb1: ()=>{
                                         location.href = data.name + '#!/console'
-                                    }
+                                    },
+                                    wapGoDialog: true
                                 })
                                 break
                             default:

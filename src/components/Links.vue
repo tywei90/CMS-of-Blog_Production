@@ -104,7 +104,8 @@
                                 btn1: '确定',
                                 cb1: ()=>{
                                     location.href = data.name + '#!/console'
-                                }
+                                },
+                                wapGoDialog: true
                             })
                             break
                         default:

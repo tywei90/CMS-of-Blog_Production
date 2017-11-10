@@ -57,10 +57,31 @@ section.container {
 
 @media screen and (max-width: 700px) {
     #main {
+        .dialog-wrap{
+            .close{
+                top: -7px;
+            }
+            .title{
+                height: 40px;
+                line-height: 40px;
+                font-size: 15px;
+            }
+            .content{
+                width: 200px;
+                padding: 25px 45px 10px;
+                min-height: 30px;
+            }
+            .button{
+                padding: 15px 5px 15px;
+                .btn{
+                    padding: 0px 20px;
+                    font-size: 14px;
+                }
+            }
+        }
         header.myHeader {
             padding: 20px 0;
             margin-bottom: 20px;
-            ;
             div.circle,
             ul.menu {
                 margin: 0 auto;
@@ -207,7 +228,7 @@ section.container {
             }
         }
         .aside-icon {
-            z-index: 30;
+            z-index: 10;
             position: absolute;
             top: 17px;
             color: #fff;
@@ -245,11 +266,12 @@ section.container {
             button {
                 width: 150px;
                 height: 40px;
-                margin: 60px 0;
+                margin: 30px 0 20px;
                 font-size: 15px;
             }
             table {
                 width: 94%;
+                top:90px;
                 th {
                     min-width: 0px;
                     box-sizing: border-box;
@@ -330,8 +352,100 @@ section.container {
                 }
             }
         }
+        .links{
+            width: 100%;
+            left:0;
+            min-width: 0px;
+            .title{
+                width: 100%;
+                font-size: 20px;
+                margin: 30px 0 20px;
+            }
+            table{
+                width: 100%;
+                th{
+                    font-size: 15px;
+                }
+                td{
+                    font-size: 13px;
+                }
+                th:nth-child(1) {
+                    width: 35%;
+                }
+                th:nth-child(2) {
+                    width: 45%;
+                }
+                th:nth-child(3) {
+                    width: 20%;
+                }
+                td:nth-child(1) {
+                    box-sizing: border-box;
+                    .icon:after{
+                        width: 0;
+                    }
+                    .icon-jia{
+                        float: right;
+                        padding-top: 6px;
+                    }
+                    .icon-jian{
+                        float: left;
+                        padding-top: 6px;
+                    }
+                    input{
+                        max-width: 1000px;
+                        width: calc(100% - 64px);
+                    }
+                    padding-left: 10px;
+                }
+                td:nth-child(2) {
+                    text-align: right;
+                    input{
+                        width: 80%;
+                    }
+                }
+            }
+            .panel{
+                padding-right: 0;
+                text-align: center;
+                button{
+                    height: 40px;
+                    width: 220px;
+                    font-size: 16px;
+                }
+            }
+        }
+        .account{
+            width: 100%;
+            left: 0;
+            .title {
+                width: 100%;
+                font-size: 20px;
+                padding: 0;
+                margin: 30px 0 20px;
+            }
+            .password{
+                margin: 20px auto 40px auto;
+                padding-right: 0;
+                text-align: center;
+                width: 80%;
+                li>input{
+                    width: 70%;
+                    margin: 20px auto;
+                }
+            }
+            .panel1{
+                padding-right: 0;
+            }
+        }
     }
 }
+
+
+
+
+
+
+
 
 
 

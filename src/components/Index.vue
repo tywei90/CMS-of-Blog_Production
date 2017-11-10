@@ -89,6 +89,7 @@
             this.bgToggle('MyCanvas')
         },
         methods: {
+            popLogin,
         },
         components: {
             myHeader,

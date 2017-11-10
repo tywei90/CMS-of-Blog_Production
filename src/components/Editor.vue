@@ -78,7 +78,8 @@
                                     btn1: '返回',
                                     cb1: ()=>{
                                         window.history.back(-1)
-                                    }
+                                    },
+                                    wapGoDialog: true
                                 })
                                 break
                             default:
@@ -113,7 +114,8 @@
                                 content: '保存成功!',
                                 cb1: ()=>{
                                     this.$router.go('/console/articleList')
-                                }
+                                },
+                                wapGoDialog: true
                             })
                             break
                         case 410:
@@ -126,7 +128,8 @@
                                 btn1: '确定',
                                 cb1: ()=>{
                                     location.href = data.name + '#!/console'
-                                }
+                                },
+                                wapGoDialog: true
                             })
                             break
                         default:

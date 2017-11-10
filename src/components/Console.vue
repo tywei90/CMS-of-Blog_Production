@@ -1,6 +1,6 @@
 <template>
     <navi-header></navi-header>
-    <div class="mask"></div>
+    <div class="mask" @click="handleClick('')"></div>
     <i class="aside-icon icon iconfont icon-rilijiantouyoushuang"></i>
     <aside class="console">
         <div class="circle" @click="$router.go('/')">
@@ -63,15 +63,17 @@
         ready(){
             this.bgToggle('NightSky');
             $('.aside-icon').click(function(event) {
-                if($(this).hasClass('icon-left')){
-                    $(this).removeClass('icon-left').addClass('icon-rilijiantouyoushuang');
-                    $('.console').css('left', '-200px');
-                    $('.mask').hide();
-                }else{
-                    $(this).removeClass('icon-rilijiantouyoushuang').addClass('icon-left');
-                    $('.console').css('left', '0');
-                    $('.mask').show();
-                }
+                $('.console').css('left', '0');
+                $('.mask').show();
+                // if($(this).hasClass('icon-left')){
+                //     $(this).removeClass('icon-left').addClass('icon-rilijiantouyoushuang');
+                //     $('.console').css('left', '-200px');
+                //     $('.mask').hide();
+                // }else{
+                //     $(this).removeClass('icon-rilijiantouyoushuang').addClass('icon-left');
+                //     $('.console').css('left', '0');
+                //     $('.mask').show();
+                // }
             });
         },
         methods: {

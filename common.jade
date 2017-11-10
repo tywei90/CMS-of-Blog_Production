@@ -18,9 +18,10 @@ html(lang="zh-CN")
           var s = document.getElementsByTagName("script")[0]; 
           s.parentNode.insertBefore(hm, s);
         })();
-  body
+  body(id='main')
     waiting(v-if='waiting')
     pop(v-show='pop')
     component(:is='bg')
     router-view
     script(src='/public/common.build.js')
+    //- script(src='http://127.0.0.1:8080/public/common.build.js')
