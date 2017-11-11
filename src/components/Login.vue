@@ -7,16 +7,16 @@
                 </p>
                 <p>
                     <i class="icon iconfont icon-zhanghu"></i>
-                    
+                    <input type="text" name="userName" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
                     <input type="text" name="userName" placeholder="用户名" autocomplete="off" v-model="userName">
                 </p>
                 <p>
                     <i class="icon iconfont icon-mima"></i>
-                    
+                    <input type="password" placeholder="去除chrome自动完成" autocomplete="off" style="display:none">
                     <input type="password" placeholder="密码" autocomplete="off" v-model="password">
                 </p>
                 <p>
-                    <button @click="loginRequest">登陆</button>
+                    <button @click="loginRequest">登录</button>
                     <span>没有账号？去<a v-link="{path: '/register'}">注册</a></span>
                 </p>
             </div>
