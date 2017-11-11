@@ -62,15 +62,15 @@ if (process.env.NODE_ENV === 'production') {
                 NODE_ENV: '"production"'
             }
         }),
-        // new webpack.optimize.UglifyJsPlugin({
-        //     sourceMap: false,
-        //     output: {
-        //         comments: false,
-        //     },
-        //     compress: {
-        //         warnings: false
-        //     }
-        // }),
+        new webpack.optimize.UglifyJsPlugin({
+            sourceMap: false,
+            output: {
+                comments: false,
+            },
+            compress: {
+                warnings: false
+            }
+        }),
         new webpack.optimize.OccurenceOrderPlugin()
     ])
 }
