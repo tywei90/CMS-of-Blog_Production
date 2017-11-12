@@ -354,6 +354,10 @@ section.container {
                     margin-top:-2px;
                     width: 120px;
                 }
+                .save{
+                    width: 70px;
+                    font-size: 14px;
+                }
             }
         }
         .links{
@@ -411,6 +415,7 @@ section.container {
             .panel{
                 padding-right: 0;
                 text-align: center;
+                padding-bottom: 20px;
                 button{
                     height: 40px;
                     width: 220px;
@@ -439,6 +444,12 @@ section.container {
             }
             .panel1{
                 padding-right: 0;
+            }
+            .panel2{
+                position: static;
+                margin-bottom: 20px;
+                width: 70px;
+                font-size: 14px;
             }
         }
     }

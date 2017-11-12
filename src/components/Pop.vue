@@ -107,6 +107,7 @@
                         $dialog.addClass('toast-wrap');
                         setTimeout(()=>{
                             this.pop();
+                            $dialog.removeClass('toast-wrap');
                         }, 2000)
                     }
                     //调整弹窗居中
