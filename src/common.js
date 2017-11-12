@@ -68,10 +68,9 @@ router.beforeEach(function({to, abort, next}) {
     next()
 })
 
-router.afterEach(function ({to, abort, next}) {
+router.afterEach(function (transition) {
     console.log(router.app.bg);
-    console.log(to);
-    console.log(abort);
+    console.log(transition);
     if(router.app.bg === 'NightSky'){
         // 修改页面超过一屏底部白色的bug
         var h1 = $(document).height();
@@ -80,7 +79,6 @@ router.afterEach(function ({to, abort, next}) {
             $('.nightSky').css('bottom', (h2 - h1)+'px');
         }, 0)
     }
-    next()
 });
 
 router.start(App, 'body')
