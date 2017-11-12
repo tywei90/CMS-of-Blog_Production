@@ -9,7 +9,7 @@
         box-sizing: border-box;
         height: 90%;
         float: left;
-        transition: width 0.6s;
+        // transition: width 0.6s;
         background-color: transparent;
         font-size: 16px;
         line-height: 24px;
@@ -71,10 +71,13 @@ section.editor {
         margin: 0 50px;
         position: relative;
         height: 30px;
-        input {
-            @include defaultInput(160px, 30px);
-            border-bottom: 2px solid $baseColor1;
-            text-align: center;
+        button.back {
+            @include defaultButton();
+            position: absolute;
+            left: 0;
+            height: 30px;
+            width: 60px;
+            border: 1px solid $baseColor1;
         }
         button.save {
             @include defaultButton();

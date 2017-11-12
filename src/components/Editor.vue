@@ -19,9 +19,9 @@
             </article>
         </div>
         <div class="panel">
-            <input type="text"
-                   v-model="dateStr"
-            >
+            <button class="back"
+                    @click="goBack">返回
+            </button>
             <button class="save"
                     @click="send">保存
             </button>
@@ -33,13 +33,13 @@
     import marked       from '../js/marked.min'
     import hljs         from '../js/highlight.min'
     import {pop}        from '../vuex/actions'
+    import $            from '../js/jquery.min'
 
     export default{
         data(){
             return {
                 title: '',
                 input: '',
-                date: '',
                 id: '',
                 view: screen.width > 700? 'inspect' : 'edit'
             }
@@ -66,7 +66,6 @@
                             case 200:
                                 this.input = data.article.content
                                 this.title = data.article.title
-                                this.date = data.article.date
                                 this.id = data.article._id
                                 break
                             case 410:
@@ -86,22 +85,21 @@
                                 this.pop(desc)
                         }
                     })
-            } else {
-                this.date = new Date().toLocaleDateString()
             }
         },
 
         methods: {
             popLogin,
+            goBack(){
+                this.$router.go('/console/articleList');
+            },
             send(){
                 this.title = this.title.trim()
                 if (!this.title) {
                     this.pop('请输入标题')
                     return
                 }
-                if (!this.dateStr.trim()) {
-                    this.date = new Date()
-                }
+                this.$data.date = new Date();
                 this.$http.post('/web/saveArticle', this.$data)
                 .then((response)=> {
                     let res = JSON.parse(response.body)
@@ -143,34 +141,34 @@
                 this.view = this.view === 'edit' ? 'inspect' : 'edit';
             },
         },
-        computed: {
-            dateStr: {
-                set(value){
-                    value = value.trim()
-                    let reg = /(\d{4})年(\d+)月(\d+)日/
-                    if (reg.test(value)) {
-                        let date = RegExp.$1
-                                + '/' + RegExp.$2
-                                + '/' + RegExp.$3
-                        this.date = new Date(date)
+        // computed: {
+        //     dateStr: {
+        //         set(value){
+        //             value = value.trim()
+        //             let reg = /(\d{4})年(\d+)月(\d+)日/
+        //             if (reg.test(value)) {
+        //                 let date = RegExp.$1
+        //                         + '/' + RegExp.$2
+        //                         + '/' + RegExp.$3
+        //                 this.date = new Date(date)
 
-                    } else {
-                        this.date = new Date()
-                    }
-                },
+        //             } else {
+        //                 this.date = new Date()
+        //             }
+        //         },
 
-                get(){
-                    let d = new Date(this.date)
-                    if (d != 'Invalid Date') {
-                        return d.getFullYear() + '年' +
-                                (d.getMonth() + 1) + '月' +
-                                d.getDate() + '日'
-                    } else {
-                        return '日期不合法'
-                    }
-                }
-            }
-        },
+        //         get(){
+        //             let d = new Date(this.date)
+        //             if (d != 'Invalid Date') {
+        //                 return d.getFullYear() + '年' +
+        //                         (d.getMonth() + 1) + '月' +
+        //                         d.getDate() + '日'
+        //             } else {
+        //                 return ''
+        //             }
+        //         }
+        //     }
+        // },
         ready(){
             hljs.initHighlighting();
             hljs.initHighlighting.called = false;
