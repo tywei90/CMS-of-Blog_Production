@@ -140,7 +140,7 @@
                 })
             },
             editToggle(){
-                this.view = this.view === 'edit' ? 'inspect' : 'edit'
+                this.view = this.view === 'edit' ? 'inspect' : 'edit';
             },
         },
         computed: {
@@ -172,8 +172,17 @@
             }
         },
         ready(){
-            hljs.initHighlighting()
-            hljs.initHighlighting.called = false
+            hljs.initHighlighting();
+            hljs.initHighlighting.called = false;
+            var $textarea = $('.editor textarea');
+            var $article = $('.editor article');
+            // 左右scroll同步
+            $textarea.scroll(function(){
+                $article.scrollTop($textarea.scrollTop());
+            });
+            $article.scroll(function(){
+                $textarea.scrollTop($article.scrollTop());
+            });
         },
         vuex: {
             actions: {
