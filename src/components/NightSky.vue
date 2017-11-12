@@ -6,7 +6,6 @@
     </div>
 </template>
 <script>
-	import $  from '../js/jquery.min'
     export default{
     	ready(){
     		
