@@ -218,13 +218,17 @@ section.container {
         }
         .console {
             top: 0;
-            padding-top: 100px;
+            height: 100%;
+            box-sizing: border-box;
+            overflow: scroll;
+            padding: 100px 0;
             left: -200px;
             transition: left 0.3s;
             z-index: 20;
             background-color: rgba(158, 158, 158, 0.8);
             .navigation {
                 padding-top: 50px;
+                position: static;
             }
         }
         .aside-icon {

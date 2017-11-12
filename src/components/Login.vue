@@ -26,6 +26,7 @@
 <script>
     import {toggle, bgToggle, pop}    from '../vuex/actions'
     import {get, set}           from '../js/cookieUtil'
+    import $                from '../js/jquery.min'
 
     export default{
         data(){
@@ -42,6 +43,7 @@
         },
         ready(){
             this.bgToggle('NightSky');
+            $(document).scrollTop(0);
         },
         methods: {
             loginRequest(){
