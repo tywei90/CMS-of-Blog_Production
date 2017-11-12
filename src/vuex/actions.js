@@ -1,9 +1,19 @@
+import $   from '../js/jquery.min'
+
 function toggle(store) {
     store.dispatch('TOGGLE')
 }
 
 function bgToggle({dispatch},bg) {
-    dispatch('BGTOGGLE',bg)
+    dispatch('BGTOGGLE',bg);
+    if(bg === 'NightSky'){
+    	// 修改页面超过一屏底部白色的bug
+	    var h1 = $(document).height();
+	    var h2 = $(window).height();
+	    setTimeout(()=>{
+	        $('.nightSky').css('bottom', (h2 - h1)+'px');
+	    }, 0);
+    }
 }
 
 function pop({dispatch}, para) {

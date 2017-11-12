@@ -88,27 +88,12 @@ router.beforeEach(function({to, abort, next}) {
         router.app.popx()
     }
     next()
-});
-
-router.afterEach(function ({to, abort, next}) {
-    console.log(router.app.bg);
-    console.log(to);
-    console.log(abort);
-    if(router.app.bg === 'NightSky'){
-        // 修改页面超过一屏底部白色的bug
-        var h1 = $(document).height();
-        var h2 = $(window).height();
-        setTimeout(()=>{
-            $('.nightSky').css('bottom', (h2 - h1)+'px');
-        }, 0)
-    }
-    next()
-});
+    // if (to.path === '/console') {
+    //     abort()
+    // } else {
+    //     next()
+    // }
+})
 
 
 router.start(App, 'body')
-
-
-
-
-

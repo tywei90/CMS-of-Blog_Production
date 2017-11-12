@@ -15,9 +15,6 @@ import MyCanvas         from './components/MyCanvas.vue'
 import store            from './vuex/store'
 import {pop as popx}    from './vuex/actions'
 
-import $                from './js/jquery.min'
-
-
 Vue.use(VueResource)
 Vue.use(VueValidator)
 Vue.use(VueRouter)
@@ -66,19 +63,11 @@ router.beforeEach(function({to, abort, next}) {
         router.app.popx()
     }
     next()
+    // if (to.path === '/console') {
+    //     abort()
+    // } else {
+    //     next()
+    // }
 })
-
-router.afterEach(function (transition) {
-    console.log(router.app.bg);
-    console.log(transition);
-    if(router.app.bg === 'NightSky'){
-        // 修改页面超过一屏底部白色的bug
-        var h1 = $(document).height();
-        var h2 = $(window).height();
-        setTimeout(()=>{
-            $('.nightSky').css('bottom', (h2 - h1)+'px');
-        }, 0)
-    }
-});
 
 router.start(App, 'body')
