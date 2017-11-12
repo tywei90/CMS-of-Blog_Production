@@ -447,9 +447,11 @@ section.container {
             }
             .panel2{
                 position: static;
+                padding-left: calc(100vw - 90px);
                 margin-bottom: 20px;
                 width: 70px;
                 font-size: 14px;
+                padding-right: 0;
             }
         }
     }
