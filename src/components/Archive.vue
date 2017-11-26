@@ -1,7 +1,7 @@
 <template>
     <div class="wrap">
         <my-header></my-header>
-        <section class="archive">
+        <section class="archive" v-if="isShow">
             <ul>
                 <li class="item"
                     v-for="year in years">
@@ -33,6 +33,7 @@
             return {
                 articles: null,
                 years:[1],
+                isShow: false
             }
         },
         filters: {
@@ -71,7 +72,8 @@
                         case 200:
                             this.articles = data.articles.sort((i, j)=> {
                                 return new Date(j.date) - new Date(i.date)
-                            })
+                            });
+                            this.isShow = true;
                             break
                         case 420:
                             this.pop({

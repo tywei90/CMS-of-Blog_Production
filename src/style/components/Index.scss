@@ -1,8 +1,9 @@
-
+body{
+	background: url("/public/bg.png") left top repeat;
+}
 .wrap {
     min-height: 100vh;
     position: relative;
-    background: #fff;
 	.myHeader{
 		min-height: 60px;
 	    .circle {

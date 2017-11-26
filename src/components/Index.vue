@@ -86,7 +86,7 @@
             })
         },
         ready(){
-            this.bgToggle('MyCanvas')
+            this.bgToggle('')
         },
         methods: {
             popLogin,
