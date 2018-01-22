@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --inline --progress --color --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "watch": "webpack --progress --color --watch",
-    "server": "pm2 start ./server/cms"
+    "server": "pm2 start ./server/cms -x -- "
   },
   "dependencies": {
     "babel-runtime": "^6.0.0",

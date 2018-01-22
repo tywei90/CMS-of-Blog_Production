@@ -1,12 +1,34 @@
 #!/usr/bin/env node
 
+// node环境console.log颜色插件
+var colors = require('colors')
+colors.setTheme({
+  silly: 'rainbow',
+  input: 'grey',
+  verbose: 'cyan',
+  prompt: 'grey',
+  info: 'green',
+  data: 'grey',
+  help: 'cyan',
+  warn: 'yellow',
+  debug: 'blue',
+  error: 'red'
+})
+
+// 判断命令行参数
+let mailAddr = process.argv[2];
+let mailCode = process.argv[3];
+if (!mailAddr || !mailCode) {
+    console.log('参数错误，需要传递邮箱授权信息'.error);
+    return
+}
+
 /**
  * Module dependencies.
  */
 var app = require('./app');
 var debug = require('debug')('myapp:server');
 var http = require('http');
-
 
 /**
  * Get port from environment and store in Express.

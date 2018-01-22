@@ -2,10 +2,14 @@ var express = require('express')
 var router = express.Router()
 var db = require('./db')
 var init = require('./init')
+
+let mailAddr = process.argv[2];
+let mailCode = process.argv[3];
+
 // 发送邮件的node插件
-var nodemailer = require('nodemailer')
+var nodemailer = require('nodemailer');
 // create reusable transporter object using the default SMTP transport
-var transporter = nodemailer.createTransport('smtps://tywei90%40163.com:tywei90@smtp.163.com')
+var transporter = nodemailer.createTransport(`smtps://${mailAddr}:${mailCode}@smtp.163.com`);
 // retcode说明:
 //     200: 请求成功
 //     400: 参数错误
