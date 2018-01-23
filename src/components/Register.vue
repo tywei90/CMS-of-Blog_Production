@@ -75,7 +75,7 @@
                     <div @click="handleSendEmail" class="f-fl sendEmailBtn" :class="[sendEmailState==2||sendEmailState==3? 'disabled': '']">
                         <span v-if="sendEmailState==1">发送验证码</span>
                         <span v-if="sendEmailState==2">发送中...</span>
-                        <span v-if="sendEmailState==3">{{countDown}}s后可再发</span>
+                        <span v-if="sendEmailState==3">{{countDown}}s</span>
                         <span v-if="sendEmailState==4">再次发送</span>
                     </div>
                 </div>

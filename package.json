@@ -17,7 +17,7 @@
     "cookie-parser": "~1.4.3",
     "express": "~4.13.4",
     "jade": "~1.11.0",
-    "jquery": "^1.11.1",
+    "jquery": "~3.0.0",
     "mongoose": "^4.5.8",
     "morgan": "~1.7.0",
     "nodemailer": "^2.6.4",
