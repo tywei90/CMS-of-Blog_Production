@@ -67,7 +67,7 @@ router.post('/genEmailCode', function(req, res, next) {
             var createdTime = Date.now();
             // setup e-mail data with unicode symbols
             var mailOptions = {
-                from: '"CMS-of-Blog 👥" <tywei90@163.com>', // sender address
+                from: 'tywei90@163.com', // sender address
                 to: email, // list of receivers
                 subject: '亲爱的用户' + email, // Subject line
                 text: 'Hello world 🐴', // plaintext body
@@ -123,7 +123,7 @@ router.post('/genEmailCode', function(req, res, next) {
             var createdTime = Date.now();
             // setup e-mail data with unicode symbols
             var mailOptions = {
-                from: '"CMS-of-Blog 👥" <tywei90@163.com>', // sender address
+                from: 'tywei90@163.com', // sender address
                 to: email, // list of receivers
                 subject: '亲爱的用户' + email, // Subject line
                 text: 'Hello world 🐴', // plaintext body
