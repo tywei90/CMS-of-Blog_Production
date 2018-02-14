@@ -141,9 +141,14 @@ section.register {
             .sendEmailBtn{
                 cursor: pointer;
                 margin-left: 10px;
-                padding: 5px 10px;
                 border: 1px solid white;
                 border-radius: 3px;
+                line-height: 34px;
+                height: 34px;
+                width: 100px;
+                position: absolute;
+                top: 0px;
+                right: 130px;
             }
             .disabled{
                 background: #999;
@@ -151,7 +156,7 @@ section.register {
                 cursor: default;
             }
             input{
-                width: 200px;
+                width: 135px;
             }
         }
     }

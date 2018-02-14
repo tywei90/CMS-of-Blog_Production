@@ -1,7 +1,7 @@
 <template>
     <footer>
         <div class="copyright">
-            &copy;2016-2017 Tianyao Wei, tywei90@163.com
+            &copy;2017-2018 Tianyao Wei, tywei90@163.com
         </div>
         <div class="login" @click="login">
             站长登陆

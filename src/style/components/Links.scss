@@ -51,6 +51,8 @@ section.links {
                     }
                     i {
                         cursor: pointer;
+                        float: left;
+                        margin-top: 6px;
                         &:after {
                             content: '';
                             width: 10px;

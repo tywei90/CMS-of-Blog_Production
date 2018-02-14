@@ -197,11 +197,17 @@ section.container {
                     input {
                         width: calc(100vw - 160px);
                     }
+                    #emailCode{
+                        width: calc(100vw - 270px);
+                    }
                     .sendEmailBtn {
-                        padding: 2px 4px;
-                        margin-top: 3px;
+                        // padding: 2px 4px;
+                        // margin-top: 3px;
                         position: absolute;
                         right: 20px;
+                        top: 4px;
+                        line-height: 30px;
+                        height: 30px;
                     }
                     div.f-fr {
                         margin-right: 20px;
@@ -421,17 +427,9 @@ section.container {
                     .icon:after{
                         width: 0;
                     }
-                    .icon-jia{
-                        float: right;
-                        padding-top: 6px;
-                    }
-                    .icon-jian{
-                        float: left;
-                        padding-top: 6px;
-                    }
                     input{
                         max-width: 1000px;
-                        width: calc(100% - 64px);
+                        width: calc(100% - 80px);
                     }
                     padding-left: 10px;
                 }

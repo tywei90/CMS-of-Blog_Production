@@ -12,8 +12,8 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  user-select:none;
+  /*-webkit-user-select: none;
+  user-select:none;*/
 }
 
 /**
