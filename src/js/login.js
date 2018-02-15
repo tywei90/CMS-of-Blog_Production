@@ -103,7 +103,10 @@ function popLogin(cb) {
                         $(this).prev().focus()
                     })
                     ca.$forget.on('click', function() {
-                        me.pop('暂未开发')
+                        me.pop();
+                        setTimeout(function(){
+                            me.pop('暂未开发')
+                        }, 200);
                     })
                     ca.$register.on('click', function() {
                         me.pop()
