@@ -16,9 +16,18 @@
             </div>
         </header>
         <section class="index">
+            <div class="latestArticles">
+                <p>最新发布的文章：</p>
+                <div v-if="!articles.length && ajaxReady1">目前还没有最新发布的文章，赶紧抢沙发=&gt;<a href="/#!/register">去注册</a></div>
+                <ul class="f-cb" v-else>
+                    <li v-for="item in articles">
+                        <a :href="item.href">{{$index+1}}. {{item.title}}</a>
+                    </li>
+                </ul>
+            </div>
             <div class="registedUsers">
                 <p>目前已注册的用户：</p>
-                <div v-if="!users.length && ajaxReady">目前还没有注册的用户，赶紧抢沙发=&gt;<a href="/#!/register">去注册</a></div>
+                <div v-if="!users.length && ajaxReady2">目前还没有注册的用户，赶紧抢沙发=&gt;<a href="/#!/register">去注册</a></div>
                 <ul class="f-cb" v-else>
                     <li 
                         :style="{'background': 'rgba(' + Math.floor(Math.random()*256) + ',' + Math.floor(Math.random()*256) + ',' + Math.floor(Math.random()*256) + ',' + 0.6 + ')'}" 
@@ -43,8 +52,10 @@
         data(){
             return {
                 userName: '',
+                articles: [],
+                ajaxReady1: false,
                 users: [],
-                ajaxReady: false,
+                ajaxReady2: false
             }
         },
         computed:{
@@ -63,6 +74,24 @@
                 let hostName = location.hostname
                 set('username', this.userName, date, '/', hostName)
             }
+            // 请求最新的五篇文章
+            this.$http.get('/web/latestArticles')
+            .then((response)=> {
+                let res = JSON.parse(response.body)
+                let code = res.retcode
+                let desc = res.retdesc
+                let data = res.data
+                switch (code){
+                    case 200:
+                        this.ajaxReady1 = true
+                        this.articles = data.articles || []
+                        break
+                    default:
+                        this.pop(desc)
+                }
+            }, (response)=> {
+                console.log(response)
+            })
             // 请求所有已注册的用户
             this.$http.get('/web/registedUsers')
             .then((response)=> {
@@ -72,7 +101,7 @@
                 let data = res.data
                 switch (code){
                     case 200:
-                        this.ajaxReady = true
+                        this.ajaxReady2 = true
                         this.users = data.users || []
                         this.users.forEach(function(item){
                             item.href = '/' + item.name + '#!/'

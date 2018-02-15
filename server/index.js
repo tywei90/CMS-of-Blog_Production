@@ -72,7 +72,7 @@ router.post('/genEmailCode', function(req, res, next) {
                 subject: '亲爱的用户' + email, // Subject line
                 text: 'Hello world 🐴', // plaintext body
                 html: [
-                    '<p>您好！恭喜您注册成为CMS-of-Blog博客用户。</p><br/>',
+                    '<p>您好！恭喜您注册成为CMS-of-Blog博客用户。</p>',
                     '<p>这是一封发送验证码的注册认证邮件，请复制一下验证码填写到注册页面以完成注册。</p>',
                     '<p>本次验证码为：' + emailCode + '</p>',
                     '<p>上述验证码30分钟内有效。如果验证码失效，请您登录网站<a href="https://cms.wty90.com/#!/register">CMS-of-Blog博客注册</a>重新申请认证。</p>',
@@ -93,7 +93,7 @@ router.post('/genEmailCode', function(req, res, next) {
                     email: email,
                     emailCode: emailCode,
                     createdTime: createdTime,
-                    articles: init.articles,
+                    articles: [],
                     links: []
                 }).save(function(err) {
                     if (err) return console.log(err)
@@ -128,7 +128,7 @@ router.post('/genEmailCode', function(req, res, next) {
                 subject: '亲爱的用户' + email, // Subject line
                 text: 'Hello world 🐴', // plaintext body
                 html: [
-                    '<p>您好！恭喜您注册成为CMS-of-Blog博客用户。</p><br/>',
+                    '<p>您好！恭喜您注册成为CMS-of-Blog博客用户。</p>',
                     '<p>这是一封发送验证码的注册认证邮件，请复制一下验证码填写到注册页面以完成注册。</p>',
                     '<p>本次验证码为：' + emailCode + '</p>',
                     '<p>上述验证码30分钟内有效。如果验证码失效，请您登录网站<a href="https://cms.wty90.com/#!/register">CMS-of-Blog博客注册</a>重新申请认证。</p>',
@@ -168,6 +168,41 @@ router.post('/genEmailCode', function(req, res, next) {
                     }
                 })
             });
+        }
+    })
+})
+
+router.get('/latestArticles', function(req, res, next) {
+    var resBody = {
+        retcode: '',
+        retdesc: '',
+        data: {}
+    }
+    db.User.find({}, '-_id name articles', function(err, doc) {
+        if (err) {
+            return console.log(err)
+        }else if(doc){
+            var outArr = [];
+            for(var i=0, len=doc.length; i<len; i++){
+                for(var j=0, len2=doc[i].articles.length; j<len2; j++){
+                    outArr.push({
+                        title: doc[i].articles[j].title,
+                        date: doc[i].articles[j].date,
+                        href: '/' + doc[i].name + '#!/article?id=' + doc[i].articles[j]._id
+                    })
+                }
+            }
+            outArr.sort(function(a, b){
+                return Date.parse(b.date) - Date.parse(a.date)
+            })
+            resBody = {
+                retcode: 200,
+                retdesc: '请求成功',
+                data: {
+                    articles: outArr.slice(0, 5)
+                }
+            }
+            res.send(resBody)
         }
     })
 })
@@ -463,6 +498,7 @@ router.post('/register', function(req, res, next) {
                         name: name,
                         password: password,
                         createdTime: Date.now(),
+                        articles: init.articles,
                         links: links
                     }, function(err) {
                         if (err) {
