@@ -9,7 +9,7 @@
         (formated)btn1Text: 按钮1文案
         (formated)btn1Css: 按钮1样式class
     cb1: 按钮1点击之后的回调，如果cb1没有明确返回true，则默认按钮点击后关闭弹窗
-    btn2: '按钮2文案|按钮1样式class', 格式化后为btn2Text和btn2Css
+    btn2: '按钮2文案|按钮2样式class', 格式化后为btn2Text和btn2Css
         (formated)btn2Text: 按钮2文案
         (formated)btn2Css: 按钮2样式class
     cb2: 按钮2点击之后的回调，如果cb2没有明确返回true，则默认按钮点击后关闭弹窗
