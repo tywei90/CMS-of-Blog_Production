@@ -2,6 +2,7 @@ var express = require('express')
 var router = express.Router()
 var db = require('./db')
 var init = require('./init')
+var arrSort = require('arr-sort');
 
 var mailAddr = process.argv[2];
 var mailCode = process.argv[3];
@@ -195,6 +196,12 @@ router.get('/latestArticles', function(req, res, next) {
             outArr.sort(function(a, b){
                 return Date.parse(b.date) - Date.parse(a.date)
             })
+            outArr = arrSort(outArr,
+                [{
+                    attr: 'date',
+                    asc: function(a, b){return Date.parse(b.date) - Date.parse(a.date)}
+                }]
+            );
             resBody = {
                 retcode: 200,
                 retdesc: '请求成功',

@@ -32,7 +32,7 @@ $tableWidth: 20px 28% 8% 13% 13% 320px;
 }
 
 @mixin shade($zIndex: 9) {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
