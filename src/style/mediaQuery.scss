@@ -94,17 +94,7 @@
             line-height: 40px;
         }
         section .post-block {
-            padding: 0 30px;
-        }
-        .post-content {
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-                max-width: 300px;
-                left: 15px;
-            }
+            padding: 0 10px;
         }
         .archive .item {
             padding-left: 20px;
@@ -264,6 +254,7 @@
                     overflow: hidden;
                     white-space: nowrap;
                     text-overflow: ellipsis;
+                    max-width: 120px;
                 }
                 td:nth-child(3) {
                     .icon:after {
@@ -331,23 +322,23 @@
                     font-size: 13px;
                 }
                 h1{
-                    font-size: 24px;
-                    line-height: 1.5;
-                }
-                h2{
-                    font-size: 22px;
-                    line-height: 1.5;
-                }
-                h3{
                     font-size: 20px;
                     line-height: 1.5;
                 }
-                h4{
+                h2{
                     font-size: 18px;
                     line-height: 1.5;
                 }
-                h5{
+                h3{
                     font-size: 16px;
+                    line-height: 1.5;
+                }
+                h4{
+                    font-size: 14px;
+                    line-height: 1.5;
+                }
+                h5{
+                    font-size: 14px;
                     line-height: 1.5;
                 }
                 h6{

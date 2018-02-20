@@ -35,9 +35,28 @@
 }
 
 section.editor {
+    text-align: justify;
+    line-height: 1.6;
+    p, ul, ol {
+        line-height: 1.8;
+        word-break: break-all;
+    }
+    ol li{
+        margin: 10px 0;
+    }
+    ul li{
+        margin: 10px 0;
+    }
+    img{
+        display: block;
+        max-width: 100%;
+        margin: 1em auto;
+    }
     @include rightSide();
     textarea {
         resize: none;
+        text-align: justify;
+        word-break: break-all;
     }
     .title {
         @include defaultInput(400px, 60px);
