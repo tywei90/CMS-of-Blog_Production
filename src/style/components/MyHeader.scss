@@ -1,6 +1,6 @@
 header.myHeader {
     min-height: 60px;
-    .circle {
+    .circle,.circle2 {
         float: left;
         width: 60px;
         height: 60px;
@@ -8,9 +8,17 @@ header.myHeader {
         overflow: hidden;
         cursor: pointer;
         margin-right: 30px;
-        img {
+    }
+    .circle2 {
+        line-height: 60px;
+        background: #ff8080;
+        text-align: center;
+        span{
+            font-size: 14px;
+            color: #fff;
+            overflow: hidden;
             width: 60px;
-            height: 60px;
+            display: block;
         }
     }
     ul {
@@ -38,6 +46,7 @@ header.myHeader {
         right: 60px;
         span em{
             color: #3db82f;
+            cursor: pointer;
         }
         a {
             color: #2c3e50;

@@ -1,7 +1,7 @@
 <template>
     <header class="myHeader">
-        <div class="circle" @click="goHome">
-            <img src="../img/me.jpg">
+        <div class="circle2" @click="goHome1">
+            <span>{{visitUserName}}</span>
         </div>
         <ul class="menu">
             <li v-for="link in links">
@@ -26,7 +26,7 @@
             <a href="/#!/register">注册</a>
         </div>
         <div class="userGiude f-fl" v-else>
-            <span class="login-yes">您好，<em>{{loginUserName}}</em></span>
+            <span class="login-yes">您好，<em @click="goHome2">{{loginUserName}}</em></span>
         </div>
     </header>
 </template>
@@ -78,14 +78,11 @@
         },
         methods:{
             popLogin,
-            goHome(){
-                if(this.loginUserName){
-                    // 登录的话直接去自己的主页
-                    location.href = '/' + this.loginUserName + '#!/'
-                }else{
-                    // 否则还是在别人的主页
-                    this.$router.go('/')
-                }
+            goHome1(){
+                this.$router.go('/')
+            },
+            goHome2(){
+                location.href = '/' + this.loginUserName + '#!/'
             },
             // 主要是想拦截非登录状态进入博客设置页面
             preIntercept(linkUrl, newPage){
