@@ -206,7 +206,7 @@ router.get('/latestArticles', function(req, res, next) {
                 retcode: 200,
                 retdesc: '请求成功',
                 data: {
-                    articles: outArr.slice(0, 5)
+                    articles: outArr.slice(0, 10)
                 }
             }
             res.send(resBody)
