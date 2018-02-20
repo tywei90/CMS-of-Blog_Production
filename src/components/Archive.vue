@@ -2,7 +2,7 @@
     <div class="wrap">
         <my-header></my-header>
         <section class="archive" v-if="isShow">
-            <ul>
+            <ul v-if="articles.length > 0">
                 <li class="item"
                     v-for="year in years">
                     <p>{{year}}</p>
@@ -19,6 +19,7 @@
                     </ul>
                 </li>
             </ul>
+            <div v-else>博主很懒，还没有发布文章哦~</div>
         </section>
         <my-footer></my-footer>
     </div>
