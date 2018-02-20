@@ -24,31 +24,24 @@ section.article {
         h6 {
             position: relative;
             margin: 1em 0;
-            &:before {
-                content: "#";
-                color: #42b983;
-                position: absolute;
-                left: -0.7em;
-                top: -4px;
-                font-size: 1.2em;
-                font-weight: bold;
-            }
         }
-        h4,
-        h5,
-        h6 {
-            &:before {
-                content: "";
-            }
+        h1{
+            font-size: 24px;
         }
-        h2,
-        h3 {
+        h2{
             font-size: 22px;
         }
-        h4,
-        h5,
-        h6 {
+        h3{
+            font-size: 20px;
+        }
+        h4{
             font-size: 18px;
+        }
+        h5{
+            font-size: 16px;
+        }
+        h6{
+            font-size: 14px;
         }
         a {
             color: #42b983;
