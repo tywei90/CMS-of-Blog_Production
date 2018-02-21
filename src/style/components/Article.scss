@@ -72,7 +72,7 @@ section.article {
     }
     code,
     pre {
-        font-family: 'Roboto Mono', Monaco, courier, monospace;
+        font-family: Menlo,Monaco,Andale Mono,lucida console,Courier New,monospace;
         color: #525252;
     }
     li code, p code{
@@ -80,6 +80,6 @@ section.article {
         background-color: pink;
         font-size: 14px;
         border-radius: 3px;
-        padding: 1px 4px;
+        padding: 3px 4px;
     }
 }
