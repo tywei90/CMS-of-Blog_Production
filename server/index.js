@@ -196,7 +196,7 @@ router.get('/latestArticles', function(req, res, next) {
             outArr = arrSort(outArr,
                 [{
                     attr: 'date',
-                    asc: function(a, b){return Date.parse(b.date) - Date.parse(a.date)}
+                    asc: function(a, b){return Date.parse(b) - Date.parse(a)}
                 }]
             );
             resBody = {
