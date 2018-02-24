@@ -59,10 +59,10 @@ section.editor {
         word-break: break-all;
     }
     .title {
-        @include defaultInput(400px, 60px);
+        @include defaultInput(50%, 60px);
         display: block;
         text-align: center;
-        font-size: 40px;
+        font-size: 20px;
         margin: 20px auto;
         border-bottom: 2px solid $baseColor1;
     }
