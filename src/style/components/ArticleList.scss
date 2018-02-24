@@ -15,7 +15,7 @@ section.articleList {
         position: absolute;
         @include center();
         top: 150px;
-        width: 60%;
+        width: 70%;
         tr {
             height: 50px;
             th {
@@ -23,21 +23,26 @@ section.articleList {
                 font-weight: normal;
                 cursor: pointer;
                 &:first-of-type {
-                    width: 40%;
-                    min-width: 40px;
+                    width: 50%;
+                    max-width: 400px;
+                    min-width: 200px;
                 }
                 &:nth-of-type(2) {
                     width: 30%;
                     min-width: 200px;
                 }
                 &:last-of-type {
-                    width: 30%;
+                    width: 20%;
                     min-width: 100px;
                     cursor: default;
                 }
             }
             td:first-of-type {
+                max-width: 400px;
                 cursor: pointer;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
             }
             td:nth-of-type(2),
             td:nth-of-type(3) {

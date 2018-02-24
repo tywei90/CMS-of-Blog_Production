@@ -141,34 +141,6 @@
                 this.view = this.view === 'edit' ? 'inspect' : 'edit';
             },
         },
-        // computed: {
-        //     dateStr: {
-        //         set(value){
-        //             value = value.trim()
-        //             let reg = /(\d{4})年(\d+)月(\d+)日/
-        //             if (reg.test(value)) {
-        //                 let date = RegExp.$1
-        //                         + '/' + RegExp.$2
-        //                         + '/' + RegExp.$3
-        //                 this.date = new Date(date)
-
-        //             } else {
-        //                 this.date = new Date()
-        //             }
-        //         },
-
-        //         get(){
-        //             let d = new Date(this.date)
-        //             if (d != 'Invalid Date') {
-        //                 return d.getFullYear() + '年' +
-        //                         (d.getMonth() + 1) + '月' +
-        //                         d.getDate() + '日'
-        //             } else {
-        //                 return ''
-        //             }
-        //         }
-        //     }
-        // },
         ready(){
             hljs.initHighlighting();
             hljs.initHighlighting.called = false;
