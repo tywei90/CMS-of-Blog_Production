@@ -1,5 +1,11 @@
 header.myHeader {
     min-height: 60px;
+    .userGiude{
+        .logout{
+            padding: 0;
+            margin: 0 6px;
+        }
+    }
     .circle,.circle2 {
         float: left;
         width: 60px;

@@ -5,14 +5,26 @@
                 <i class="icon iconfont icon-fire"></i>
             </div>
             <div class="naviHead f-fl" v-if="!userName">
-                <span class="login-no">您还未登录</span>
-                <a @click="popLogin">登录</a>
-                <a href="/#!/register">注册</a>
+                <a target="_blank" href="https://www.wty90.com/">博客</a>
+                <a target="_blank" href="https://github.com/tywei90">Github</a>
             </div>
             <div class="naviHead f-fl" v-else>
-                <span class="login-yes">您好，{{userName}}</span>
                 <a :href="myHome">主页</a>
                 <a :href="mySetting">设置</a>
+                <a target="_blank" href="https://www.wty90.com/">博客</a>
+                <a target="_blank" href="https://github.com/tywei90">Github</a>
+            </div>
+             <div class="userGiude f-fl" v-if="!userName">
+                <span class="login-no">您还未登录</span>
+                <a @click="popLogin">登录</a> |
+                <a href="/#!/register">注册</a>
+            </div>
+            <div class="userGiude f-fl" v-else>
+                <span class="login-yes">您好，<em @click="goHome">{{userName}}</em></span>
+                <button class="logout" @click="logout">
+                    <span>登出</span>
+                    <i class="icon iconfont icon-signout"></i>
+                </button>
             </div>
         </header>
         <section class="index">
@@ -45,7 +57,7 @@
     import myHeader                     from './MyHeader.vue'
     import myFooter                     from './MyFooter.vue'
     import {pop, bgToggle, toggle}      from '../vuex/actions'
-    import {get, set}                   from '../js/cookieUtil'
+    import {get, set, unset}            from '../js/cookieUtil'
     import popLogin                     from '../js/login'
 
     export default{
@@ -119,6 +131,13 @@
         },
         methods: {
             popLogin,
+            goHome(){
+                location.href = '/' + this.userName + '#!/'
+            },
+            logout() {
+                unset('username', '/', location.hostname)
+                location.href = '/#!/login'
+            }
         },
         components: {
             myHeader,

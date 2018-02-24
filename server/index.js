@@ -814,42 +814,43 @@ router.post('/deleteArticle', function(req, res, next) {
         }
     })
 })
-router.post('/deleteUser', function(req, res, next) {
-    var referer = req.headers.referer
-    var visitUsername = referer.slice(referer.lastIndexOf('/') + 1)
-    var name = req.cookies.username
-    var resBody = {
-        retcode: '',
-        retdesc: '',
-    }
-    if (!name) {
-        resBody = {
-            retcode: 410,
-            retdesc: '未登录',
-        }
-        res.send(resBody)
-        return
-    }
-    if (visitUsername !== name) {
-        resBody = {
-            retcode: 430,
-            retdesc: '非博主不能修改！',
-            data:{name}
-        }
-        res.send(resBody)
-        return
-    }
-    db.User.remove({ name: name }, function(err) {
-        if (err) {
-            return console.log(err)
-        } else {
-            resBody = {
-                retcode: 200,
-                retdesc: '注销成功！',
-            }
-            res.send(resBody)
-        }
-    })
-})
+// 暂时取消注销功能
+// router.post('/deleteUser', function(req, res, next) {
+//     var referer = req.headers.referer
+//     var visitUsername = referer.slice(referer.lastIndexOf('/') + 1)
+//     var name = req.cookies.username
+//     var resBody = {
+//         retcode: '',
+//         retdesc: '',
+//     }
+//     if (!name) {
+//         resBody = {
+//             retcode: 410,
+//             retdesc: '未登录',
+//         }
+//         res.send(resBody)
+//         return
+//     }
+//     if (visitUsername !== name) {
+//         resBody = {
+//             retcode: 430,
+//             retdesc: '非博主不能修改！',
+//             data:{name}
+//         }
+//         res.send(resBody)
+//         return
+//     }
+//     db.User.remove({ name: name }, function(err) {
+//         if (err) {
+//             return console.log(err)
+//         } else {
+//             resBody = {
+//                 retcode: 200,
+//                 retdesc: '注销成功！',
+//             }
+//             res.send(resBody)
+//         }
+//     })
+// })
 
 module.exports = router;

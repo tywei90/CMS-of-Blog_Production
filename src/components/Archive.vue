@@ -19,7 +19,25 @@
                     </ul>
                 </li>
             </ul>
-            <div v-else>博主很懒，还没有发布文章哦~</div>
+            <div v-if="!articles.length && !isSelf">博主很懒，还没有发布文章哦~</div>
+            <div v-if="!articles.length && isSelf" class="welcome">
+                <div class="post-title">欢迎使用博客系统</div>
+                <div class="post-content">
+                    <p>此博客系统前端是用vue全家桶搭建的，负责路由跳转，是个单页面应用。后台用的nodejs的express框架，用mongoose驱动mongodb数据库来实现数据库管理。</p>
+                    <p>此博客系统支持一下功能：</p>
+                    <ol>
+                        <li>一个基本的博客内容管理器功能，如发布并管理文章等</li>
+                        <li>每个用户可以通过注册拥有自己的博客</li>
+                        <li>支持<a href="http://www.appinn.com/markdown/basic.html">markdown语法编辑</a></li>
+                        <li>支持代码高亮</li>
+                        <li>可以管理博客页面的链接</li>
+                        <li>博客页面对移动端适配优化</li>
+                        <li>账户管理(修改密码)</li>
+                        <li>页面足够大气、酷炫嘿</li>
+                    </ol>
+                    <p>点击<a :href="createArticle">这里</a>，发表自己的第一篇文章吧</p>
+                </div>
+            </div>
         </section>
         <my-footer></my-footer>
     </div>
@@ -34,7 +52,8 @@
             return {
                 articles: null,
                 years:[1],
-                isShow: false
+                isShow: false,
+                isSelf: false
             }
         },
         filters: {
@@ -52,17 +71,18 @@
         },
         created(){
             // 登录状态进入页面，重新计时cookie失效时间
-            let userName = get('username')
+            let userName = get('username');
             if (userName) {
-                let date = new Date(Date.now() + 60000 * 30)
-                let hostName = location.hostname
-                set('username', userName, date, '/', hostName)
+                let date = new Date(Date.now() + 60000 * 30);
+                let hostName = location.hostname;
+                set('username', userName, date, '/', hostName);
             }
             // 获取访问博客的用户名(地址栏上)
-            var href = document.URL
-            var indexEnd = href.lastIndexOf('#!')
-            var indexStart = href.lastIndexOf('/', indexEnd) + 1
-            let visitUserName = href.slice(indexStart, indexEnd)
+            var href = document.URL;
+            var indexEnd = href.lastIndexOf('#!');
+            var indexStart = href.lastIndexOf('/', indexEnd) + 1;
+            let visitUserName = href.slice(indexStart, indexEnd);
+            this.isSelf = userName === visitUserName;
             this.$http.post('/web/common/articleList', {name: visitUserName})
                 .then((response)=> {
                     let res = JSON.parse(response.body)
@@ -130,6 +150,10 @@
                 })
                 return archive
             },
+            createArticle(){
+                let userName = get('username');
+                return '/' + userName + '#!/console/editor';
+            }
         },
         vuex:{
             actions:{

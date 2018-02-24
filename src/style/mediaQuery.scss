@@ -44,7 +44,7 @@
             div.circle,
             div.circle2,
             ul.menu {
-                margin: 10px auto 20px;
+                margin: 25px auto 20px;
                 float: none;
                 display: block;
                 text-align: center;
@@ -54,7 +54,8 @@
                 }
             }
             div.naviHead {
-                padding-left: 15px;
+                width: 100%;
+                text-align: center;
             }
             .userGiude {
                 right: 10px;
@@ -97,7 +98,7 @@
             line-height: 40px;
         }
         section .post-block {
-            padding: 0 10px;
+            padding: 0 20px;
         }
         .archive .item {
             padding-left: 20px;

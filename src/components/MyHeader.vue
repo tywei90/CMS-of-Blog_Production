@@ -22,18 +22,22 @@
         </ul>
         <div class="userGiude f-fl" v-if="!loginUserName">
             <span class="login-no">您还未登录</span>
-            <a @click="popLogin">登录</a>|
+            <a @click="popLogin">登录</a> |
             <a href="/#!/register">注册</a>
         </div>
         <div class="userGiude f-fl" v-else>
             <span class="login-yes">您好，<em @click="goHome2">{{loginUserName}}</em></span>
+            <button class="logout" @click="logout">
+                <span>登出</span>
+                <i class="icon iconfont icon-signout"></i>
+            </button>
         </div>
     </header>
 </template>
 <script>
-    import {get}        from '../js/cookieUtil'
-    import {pop}        from '../vuex/actions'
-    import popLogin     from '../js/login'
+    import {get, unset}     from '../js/cookieUtil'
+    import {pop}            from '../vuex/actions'
+    import popLogin         from '../js/login'
 
     export default{
         data(){
@@ -83,6 +87,10 @@
             },
             goHome2(){
                 location.href = '/' + this.loginUserName + '#!/'
+            },
+            logout() {
+                unset('username', '/', location.hostname)
+                location.href = '/#!/login'
             },
             // 主要是想拦截非登录状态进入博客设置页面
             preIntercept(linkUrl, newPage){

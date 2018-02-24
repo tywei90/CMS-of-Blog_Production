@@ -39,4 +39,20 @@ section.archive {
             }
         }
     }
+    .welcome{
+        padding: 0 20px;
+        color: #34495e;
+        line-height: 1.8;
+        a:visited{
+            color: #42b983;
+        }
+        .post-title{
+            margin: .65em 0;
+            color: #2c3e50;
+            font-size: 1.5em;
+        }
+        ol li{
+            margin: 10px 0;
+        }
+    }
 }
