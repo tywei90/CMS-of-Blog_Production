@@ -110,7 +110,7 @@
                         width: 70px;
                     }
                     .title {
-                        // width: calc(100vw - 150px);
+                        max-width: calc(100% - 90px);
                         overflow: hidden;
                         white-space: nowrap;
                         text-overflow: ellipsis;

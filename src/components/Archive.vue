@@ -19,7 +19,7 @@
                     </ul>
                 </li>
             </ul>
-            <div v-if="!articles.length && !isSelf">博主很懒，还没有发布文章哦~</div>
+            <div v-if="!articles.length && !isSelf" class="welcome">博主很懒，还没有发布文章哦~</div>
             <div v-if="!articles.length && isSelf" class="welcome">
                 <div class="post-title">欢迎使用博客系统</div>
                 <div class="post-content">
@@ -35,7 +35,7 @@
                         <li>账户管理(修改密码)</li>
                         <li>页面足够大气、酷炫嘿</li>
                     </ol>
-                    <p>点击<a :href="createArticle">这里</a>，发表自己的第一篇文章吧</p>
+                    <p>当您有发表的文章后，这里会显示您的文章列表。快点击<a :href="createArticle">这里</a>，发表自己的第一篇文章吧</p>
                 </div>
             </div>
         </section>

@@ -52,7 +52,7 @@ npm run build //编译文件到build目录下，打包到磁盘里，对应3000�
 
 3、我们的html模板采用[pug](https://pugjs.org/api/getting-started.html)。如果是本地调试pc页面，改成`http://127.0.0.1:8080/public/main.js`，css文件一样。如果是调试手机页面或者其他电脑上，改成`http://your_ip_address:4000/public/main.js`。当然，需要先打包修改的代码。  
 
-4、注册后会初始化一篇文章和三个链接  
+4、注册后会给主页初始化两个链接  
 
 5、如果需要改动，则在第一次启动前打开server目录下的init.js，初始化数据放在该文件中。  
 
